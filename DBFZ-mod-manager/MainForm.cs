@@ -3,21 +3,17 @@ using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
 using Microsoft.Win32;
+using SharpCompress.Readers;
 
 namespace ModManager
 {
     public partial class MainForm : Form
     {
-        private string GamePath;
-        private string ActiveModPath;
-        private string InactiveModPath; 
+        private string GamePath = Properties.Settings.Default.gamePath;
 
         public MainForm()
         {
             InitializeComponent();
-            this.GamePath = Properties.Settings.Default.gamePath;
-            this.ActiveModPath = this.GamePath + @"RED\Content\Paks\~mods\";
-            this.InactiveModPath = this.GamePath + @"RED\Content\Paks\inactive-mods\";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -25,8 +21,18 @@ namespace ModManager
             gamePathTextBox.Text = this.GamePath;
 
             // Register custom URL protocol
-            
-
+            /*try
+            {
+                RegistryKey Key = Registry.ClassesRoot.CreateSubKey("dbfmm");
+                Key.CreateSubKey("DefaultIcon").SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + ",1");
+                Key.SetValue("", "dbfmm:Protocol");
+                Key.SetValue("URL Protocol", "");
+                Key.CreateSubKey(@"shell\open\command").SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + " % 1");
+            }
+            catch (Exception)
+            {
+        
+            }*/
 
             // check if the user has the game installed on thier primary drive 
             if (Directory.Exists(this.GamePath))
@@ -39,18 +45,27 @@ namespace ModManager
             }
         }
 
+        public string ActiveModPath() {
+            return this.GamePath + @"RED\Content\Paks\~mods\";
+        }
+
+        public string InactiveModPath()
+        {
+            return this.GamePath + @"RED\Content\Paks\inactive-mods\";
+        }
+
         private void LoadModsList()
         {
             modsList.DataSource = null;
             modsList.Rows.Clear();
 
-            this.LoadMods(this.ActiveModPath);
-            this.LoadMods(this.InactiveModPath);
+            this.LoadMods(ActiveModPath());
+            this.LoadMods(InactiveModPath());
         }
 
         private void LoadMods(string path)
         {
-            bool active = (path == this.ActiveModPath);
+            bool active = (path == ActiveModPath());
 
             if (!Directory.Exists(path))
             {
@@ -73,7 +88,7 @@ namespace ModManager
 
         private void openModsFolderBtn_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", this.ActiveModPath);
+            Process.Start("explorer.exe", ActiveModPath());
         }
 
         private void startGameBtn_Click(object sender, EventArgs e)
@@ -101,13 +116,13 @@ namespace ModManager
 
                 if (active == "True")
                 {
-                    Mod.Move(this.InactiveModPath + name + ".pak", this.ActiveModPath + name + ".pak");
-                    Mod.Move(this.InactiveModPath + name + ".sig", this.ActiveModPath + name + ".sig");
+                    Mod.Move(InactiveModPath() + name + ".pak", ActiveModPath() + name + ".pak");
+                    Mod.Move(this.InactiveModPath() + name + ".sig", ActiveModPath() + name + ".sig");
                 }
                 else
                 {
-                    Mod.Move(this.ActiveModPath + name + ".pak", this.InactiveModPath + name + ".pak");
-                    Mod.Move(this.ActiveModPath + name + ".sig", this.InactiveModPath + name + ".sig");
+                    Mod.Move(ActiveModPath() + name + ".pak", InactiveModPath() + name + ".pak");
+                    Mod.Move(ActiveModPath() + name + ".sig", InactiveModPath() + name + ".sig");
                 }
             }
         }
@@ -137,21 +152,35 @@ namespace ModManager
 
         private void gamePathBtn_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
-                if (File.Exists(folderBrowserDialog1.SelectedPath + @"\DBFighterZ.exe"))
+                if (File.Exists(folderBrowser.SelectedPath + @"\DBFighterZ.exe"))
                 {
-                    this.gamePathTextBox.Text = folderBrowserDialog1.SelectedPath + @"\";
-                    this.GamePath = folderBrowserDialog1.SelectedPath + @"\";              
-                    this.ActiveModPath = this.GamePath + @"RED\Content\Paks\~mods\";
-                    this.InactiveModPath = this.GamePath + @"RED\Content\Paks\inactive-mods\";
+                    this.gamePathTextBox.Text = folderBrowser.SelectedPath + @"\";
+                    this.GamePath = folderBrowser.SelectedPath + @"\";              
                     this.LoadModsList();
                 }
                 else
                 {
                     MessageBox.Show("Error, could not find DBFighterZ.exe in this folder. Are you sure you chose the correct folder?", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void installModBtn_Click(object sender, EventArgs e)
+        {
+            // Browse for the mod zip
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "ZIP (*.ZIP,*.zip,*.RAR,*.rar)|*.ZIP;*.zip;*.RAR;*.rar";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                Mod.Add(file.FileName);
+
+                // Reload mod list
+                this.LoadModsList();
+
+                MessageBox.Show("Mod successfully installed!");
             }
         }
     }

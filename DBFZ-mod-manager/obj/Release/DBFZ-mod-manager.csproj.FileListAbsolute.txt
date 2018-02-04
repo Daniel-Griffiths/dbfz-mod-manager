@@ -7,3 +7,4 @@ C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-
 C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\obj\Release\DBFZ-mod-manager.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\obj\Release\ModManager.MainForm.resources
 C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\obj\Release\ModManager.Properties.Resources.resources
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\bin\Release\SharpCompress.dll
