@@ -32,13 +32,11 @@ namespace DBFZ_mod_manager
         {
             this.loadDrives();
 
-            if (Directory.Exists(this.gamePath))
-            {
+            if (Directory.Exists(this.gamePath)){
                 this.loadModsList();
             } else {
                 MessageBox.Show("DragonBallFighterZ is not installed on your C:\\ drive! Please go to 'Options' and choose the correct drive.");
             }
-            
         }
 
         private void loadModsList()
@@ -52,8 +50,8 @@ namespace DBFZ_mod_manager
             this.loadMods(this.inactiveModPath);
         }
 
-        private void loadMods(string path) {
-
+        private void loadMods(string path) 
+        {
             bool active = (path == this.activeModPath);
 
             if (!Directory.Exists(path)){
@@ -92,8 +90,7 @@ namespace DBFZ_mod_manager
 
         private void moveFile(string source, string dest)
         {
-            if (File.Exists(source))
-            {
+            if (File.Exists(source)){
                 File.Copy(source, dest, true);
                 File.Delete(source);
             }
@@ -104,13 +101,11 @@ namespace DBFZ_mod_manager
             Properties.Settings.Default.drive = driveList.Text;
             Properties.Settings.Default.Save();
 
-            foreach (DataGridViewRow row in this.modsList.Rows)
-            {
+            foreach (DataGridViewRow row in this.modsList.Rows){
                 string active = row.Cells["modsActive"].Value.ToString();
                 string name = row.Cells["modsName"].Value.ToString();
 
-                if (active == "True")
-                {
+                if (active == "True"){
                     this.moveFile(this.inactiveModPath + name + ".pak", this.activeModPath + name + ".pak");
                     this.moveFile(this.inactiveModPath + name + ".sig", this.activeModPath + name + ".sig");
                 } else {
@@ -123,15 +118,12 @@ namespace DBFZ_mod_manager
         private void patchExe_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to patch DragonBallFighterZ.exe? \n\n (This is required to use mods and can be reverted at any time by going into Steam and choosing 'Verify Integrity of Game Files')", "Patch DragonBallFighterZ.exe", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                try
-                {
+            if (dialogResult == DialogResult.Yes){
+                try{
                     File.WriteAllBytes(this.gamePath + "DBFighterZ.exe", Properties.Resources.DBFighterZ);
                     MessageBox.Show("DragonBallFighterZ.exe has been successfully patched!");
                 }
-                catch (Exception exception)
-                {
+                catch (Exception exception){
                     MessageBox.Show("The following error occurred when patching the game: " + exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -145,8 +137,7 @@ namespace DBFZ_mod_manager
 
         private void loadDrives()
         {
-            foreach(var drive in DriveInfo.GetDrives())
-            {
+            foreach(var drive in DriveInfo.GetDrives()){
                driveList.Items.Add(drive.Name);
             }
 
