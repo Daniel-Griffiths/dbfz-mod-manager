@@ -14,7 +14,7 @@ The game **must** be patched in order to install mods.
 To do this simply open the DBFZ Mod Manager and click `Disable EasyAntiCheat`, choose Dragon Ball FighterZ from the dropdown and click uninstall. 
 After that click `Patch Exe` and you are all ready to go!
 
-If you ever want to un-patch the game and play online again you can simply go into Steam and (Verify the integrity of the game files)[https://support.steampowered.com/kb_article.php?ref=2037-QEUH-3335]. 
+If you ever want to un-patch the game and play online again you can simply go into Steam and [Verify the integrity of the game files](https://support.steampowered.com/kb_article.php?ref=2037-QEUH-3335). 
 
 ## Installing Mods
 
