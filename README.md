@@ -2,7 +2,7 @@
 
 A mod loader for Dragon Ball FighterZ.
 
-![Mod Loader Screenshot](screenshot.png)
+<img src="screenshot.png" width="500px" />
 
 ## Disclaimer
 
