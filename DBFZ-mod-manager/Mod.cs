@@ -17,6 +17,24 @@ namespace ModManager
             }
         }
 
+        // Delete a folder and all contained files
+        public static void Delete(string path)
+        {
+            System.IO.DirectoryInfo di = new DirectoryInfo(path);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                dir.Delete(true);
+            }
+
+            Directory.Delete(path);
+        }
+
         // Adds a new mod
         public static void Add(string path)
         {
@@ -45,24 +63,6 @@ namespace ModManager
 
             // Delete the temp files
             Delete(tempDir);
-        }
-
-        // Delete a folder and all contained files
-        public static void Delete(string path)
-        {
-            System.IO.DirectoryInfo di = new DirectoryInfo(path);
-
-            foreach (FileInfo file in di.GetFiles())
-            {
-                file.Delete();
-            }
-
-            foreach (DirectoryInfo dir in di.GetDirectories())
-            {
-                dir.Delete(true);
-            }
-
-            Directory.Delete(path);
         }
     }
 }

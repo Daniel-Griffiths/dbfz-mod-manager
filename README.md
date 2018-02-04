@@ -20,10 +20,8 @@ If you ever want to un-patch the game and play online again you can simply go in
 
 Currently the best place to get mods for DBFZ is [gamebanana.com](https://gamebanana.com/skins/games/6246).
 
-Once you download any mod you should see a `.pak` and a `.sig` file, depending on the mod these files might be stored a few folders deep. Once you have these files
-Open the DBFZ Mod Manager and click `Open Mods Folder`, place both the `.pak` and `.sig` files in this folder. Click `Refresh Mods List` and the new mods should show up! 
-
-Do not put mods into subfolders! Your mod directory should look something like this.
+Once you download any mod you should have a `.zip` or `.rar` file. In the DBFZ Mod Manager click `Add Mod`, browse to the location of the file and select it. 
+After that the mod should be installed, just click `Save and Play` to try it out!
 
 <img src="mods.png" width="500px" />
 
