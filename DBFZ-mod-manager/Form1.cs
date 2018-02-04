@@ -54,7 +54,7 @@ namespace DBFZ_mod_manager
 
         private void loadMods(string path) {
 
-            bool active = (path == this.activeModPath) ? true : false;
+            bool active = (path == this.activeModPath);
 
             if (!Directory.Exists(path)){
                 Directory.CreateDirectory(path);
