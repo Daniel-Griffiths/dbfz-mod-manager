@@ -23,7 +23,7 @@ Currently the best place to get mods for DBFZ is [gamebanana.com](https://gameba
 Once you download any mod you should have a `.zip` or `.rar` file. In the DBFZ Mod Manager click `Add Mod`, browse to the location of the file and select it. 
 After that the mod should be installed, just click `Save and Play` to try it out!
 
-<img src="mods.png" width="500px" />
+Mods can also be installed manually by putting them in the `~mods` folder. Click the `Open Mods Folder` to access this directory.
 
 ## Donate
 
