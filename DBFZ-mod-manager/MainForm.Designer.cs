@@ -1,6 +1,6 @@
-﻿namespace DBFZ_mod_manager
+﻿namespace ModManager
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.startGameBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -41,11 +41,12 @@
             this.disableEasyAntiCheatBtn = new System.Windows.Forms.Button();
             this.openModsFolderBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.driveList = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.modName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
+            this.gamePathTextBox = new System.Windows.Forms.TextBox();
+            this.gamePathBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modsList)).BeginInit();
@@ -182,33 +183,35 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.gamePathBtn);
+            this.tabPage2.Controls.Add(this.gamePathTextBox);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.driveList);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1022, 404);
+            this.tabPage2.Size = new System.Drawing.Size(813, 477);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // driveList
+            // label2
             // 
-            this.driveList.FormattingEnabled = true;
-            this.driveList.Location = new System.Drawing.Point(70, 13);
-            this.driveList.Name = "driveList";
-            this.driveList.Size = new System.Drawing.Size(121, 24);
-            this.driveList.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(377, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "(change this if the game is installed in a different directory)";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(18, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(83, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Drive:";
+            this.label1.Text = "Game Path:";
             // 
             // modName
             // 
@@ -227,16 +230,25 @@
             this.modActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.modActive.Width = 70;
             // 
-            // label2
+            // gamePathTextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(206, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(376, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "(change this if the game is installed on a drive besides C:\\)";
+            this.gamePathTextBox.Location = new System.Drawing.Point(107, 16);
+            this.gamePathTextBox.Name = "gamePathTextBox";
+            this.gamePathTextBox.ReadOnly = true;
+            this.gamePathTextBox.Size = new System.Drawing.Size(275, 22);
+            this.gamePathTextBox.TabIndex = 3;
             // 
-            // Form1
+            // gamePathBtn
+            // 
+            this.gamePathBtn.Location = new System.Drawing.Point(388, 14);
+            this.gamePathBtn.Name = "gamePathBtn";
+            this.gamePathBtn.Size = new System.Drawing.Size(35, 26);
+            this.gamePathBtn.TabIndex = 4;
+            this.gamePathBtn.Text = "...";
+            this.gamePathBtn.UseVisualStyleBackColor = true;
+            this.gamePathBtn.Click += new System.EventHandler(this.gamePathBtn_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,7 +258,7 @@
             this.Controls.Add(this.startGameBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(753, 524);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DBFZ Mod Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -274,9 +286,10 @@
         private System.Windows.Forms.DataGridView modsList;
         private System.Windows.Forms.DataGridViewCheckBoxColumn modsActive;
         private System.Windows.Forms.DataGridViewTextBoxColumn modsName;
-        private System.Windows.Forms.ComboBox driveList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button gamePathBtn;
+        private System.Windows.Forms.TextBox gamePathTextBox;
     }
 }
 

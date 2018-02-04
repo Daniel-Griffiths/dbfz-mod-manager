@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DBFZ_mod_manager.Properties {
+namespace ModManager.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,13 +25,13 @@ namespace DBFZ_mod_manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\")]
-        public string drive {
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\Steam\\steamapps\\common\\DRAGON BALL FighterZ\\")]
+        public string gamePath {
             get {
-                return ((string)(this["drive"]));
+                return ((string)(this["gamePath"]));
             }
             set {
-                this["drive"] = value;
+                this["gamePath"] = value;
             }
         }
     }
