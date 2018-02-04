@@ -21,6 +21,10 @@ Currently the best place to get mods for DBFZ is [gamebanana.com](https://gameba
 Once you download any mod you should see a `.pak` and a `.sig` file, depending on the mod these files might be stored a few folders deep. Once you have these files
 Open the DBFZ Mod Manager and click `Open Mods Folder`, place both the `.pak` and `.sig` files in this folder. Click `Refresh Mods List` and the new mods should show up! 
 
+Do not put mods into subfolders! Your mod directory should look something like this.
+
+<img src="mods.png" width="500px" />
+
 ## Donate
 
 Find this tool useful? Consider buying me a cup of coffee 😉
