@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace DBFZ_mod_manager
 {
@@ -27,11 +20,12 @@ namespace DBFZ_mod_manager
             this.activeModPath = this.gamePath +  @"RED\Content\Paks\~mods\";
             this.inactiveModPath = this.gamePath + @"RED\Content\Paks\inactive-mods\";
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             this.loadDrives();
 
+            // check if the user has the game installed on thier primary drive 
             if (Directory.Exists(this.gamePath)){
                 this.loadModsList();
             } else {
@@ -41,11 +35,9 @@ namespace DBFZ_mod_manager
 
         private void loadModsList()
         {
-            // clear grid view
             modsList.DataSource = null;
             modsList.Rows.Clear();
 
-            // add all the mods
             this.loadMods(this.activeModPath);
             this.loadMods(this.inactiveModPath);
         }
@@ -142,11 +134,6 @@ namespace DBFZ_mod_manager
             }
 
             driveList.SelectedIndex = driveList.FindStringExact(Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.System)));
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
