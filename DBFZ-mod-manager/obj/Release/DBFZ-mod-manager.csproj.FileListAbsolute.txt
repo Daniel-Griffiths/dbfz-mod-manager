@@ -1,0 +1,9 @@
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\bin\Release\DBFZ-mod-manager.exe.config
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\bin\Release\DBFZ-mod-manager.exe
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\bin\Release\DBFZ-mod-manager.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\obj\Release\DBFZ_mod_manager.Form1.resources
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\obj\Release\DBFZ_mod_manager.Properties.Resources.resources
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\obj\Release\DBFZ-mod-manager.csproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\obj\Release\DBFZ-mod-manager.exe
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\obj\Release\DBFZ-mod-manager.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\DBFZ-mod-manager\DBFZ-mod-manager\obj\Release\DBFZ-mod-manager.csprojResolveAssemblyReference.cache
