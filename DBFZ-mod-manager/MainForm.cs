@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using Microsoft.Win32;
 using SharpCompress.Readers;
+using System.Text.RegularExpressions;
 
 namespace ModManager
 {
@@ -84,7 +85,9 @@ namespace ModManager
 
                 this.modsList.Rows.Add(
                     active, 
-                    (string.IsNullOrEmpty(details["Name"])) ? name : details["Name"],  // fallback to file name if no ini is present
+                    (string.IsNullOrEmpty(details["Name"])) 
+                        ? Regex.Replace(name, "(^[a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]+)", " $1", System.Text.RegularExpressions.RegexOptions.Compiled).Trim() 
+                        : details["Name"],  // fallback to file name if no ini is present
                     details["Author"], 
                     details["Version"], 
                     details["Description"]
