@@ -60,7 +60,7 @@
             // startGameBtn
             // 
             this.startGameBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startGameBtn.Location = new System.Drawing.Point(10, 510);
+            this.startGameBtn.Location = new System.Drawing.Point(10, 642);
             this.startGameBtn.Name = "startGameBtn";
             this.startGameBtn.Size = new System.Drawing.Size(174, 35);
             this.startGameBtn.TabIndex = 1;
@@ -71,7 +71,7 @@
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveBtn.Location = new System.Drawing.Point(189, 510);
+            this.saveBtn.Location = new System.Drawing.Point(189, 642);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(174, 35);
             this.saveBtn.TabIndex = 5;
@@ -89,7 +89,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1084, 506);
+            this.tabControl1.Size = new System.Drawing.Size(1084, 638);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -103,7 +103,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1076, 477);
+            this.tabPage1.Size = new System.Drawing.Size(1076, 609);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mods";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             // installModBtn
             // 
             this.installModBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.installModBtn.Location = new System.Drawing.Point(6, 436);
+            this.installModBtn.Location = new System.Drawing.Point(6, 568);
             this.installModBtn.Name = "installModBtn";
             this.installModBtn.Size = new System.Drawing.Size(174, 35);
             this.installModBtn.TabIndex = 8;
@@ -137,13 +137,13 @@
             this.modsList.Name = "modsList";
             this.modsList.RowHeadersVisible = false;
             this.modsList.RowTemplate.Height = 24;
-            this.modsList.Size = new System.Drawing.Size(1060, 422);
+            this.modsList.Size = new System.Drawing.Size(1060, 554);
             this.modsList.TabIndex = 0;
             // 
             // patchExe
             // 
             this.patchExe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.patchExe.Location = new System.Drawing.Point(892, 435);
+            this.patchExe.Location = new System.Drawing.Point(892, 567);
             this.patchExe.Name = "patchExe";
             this.patchExe.Size = new System.Drawing.Size(174, 35);
             this.patchExe.TabIndex = 6;
@@ -154,7 +154,7 @@
             // openModsFolderBtn
             // 
             this.openModsFolderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.openModsFolderBtn.Location = new System.Drawing.Point(365, 436);
+            this.openModsFolderBtn.Location = new System.Drawing.Point(365, 568);
             this.openModsFolderBtn.Name = "openModsFolderBtn";
             this.openModsFolderBtn.Size = new System.Drawing.Size(174, 35);
             this.openModsFolderBtn.TabIndex = 2;
@@ -165,7 +165,7 @@
             // refreshModsListBtn
             // 
             this.refreshModsListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.refreshModsListBtn.Location = new System.Drawing.Point(185, 436);
+            this.refreshModsListBtn.Location = new System.Drawing.Point(185, 568);
             this.refreshModsListBtn.Name = "refreshModsListBtn";
             this.refreshModsListBtn.Size = new System.Drawing.Size(174, 35);
             this.refreshModsListBtn.TabIndex = 3;
@@ -176,7 +176,7 @@
             // disableEasyAntiCheatBtn
             // 
             this.disableEasyAntiCheatBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.disableEasyAntiCheatBtn.Location = new System.Drawing.Point(712, 435);
+            this.disableEasyAntiCheatBtn.Location = new System.Drawing.Point(712, 567);
             this.disableEasyAntiCheatBtn.Name = "disableEasyAntiCheatBtn";
             this.disableEasyAntiCheatBtn.Size = new System.Drawing.Size(174, 35);
             this.disableEasyAntiCheatBtn.TabIndex = 7;
@@ -290,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 550);
+            this.ClientSize = new System.Drawing.Size(1082, 682);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.startGameBtn);
