@@ -51,6 +51,8 @@
             this.modAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modsList)).BeginInit();
@@ -186,6 +188,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.linkLabel1);
             this.tabPage2.Controls.Add(this.gamePathBtn);
             this.tabPage2.Controls.Add(this.gamePathTextBox);
             this.tabPage2.Controls.Add(this.label2);
@@ -200,7 +204,7 @@
             // 
             // gamePathBtn
             // 
-            this.gamePathBtn.Location = new System.Drawing.Point(643, 15);
+            this.gamePathBtn.Location = new System.Drawing.Point(638, 15);
             this.gamePathBtn.Name = "gamePathBtn";
             this.gamePathBtn.Size = new System.Drawing.Size(35, 26);
             this.gamePathBtn.TabIndex = 4;
@@ -210,7 +214,7 @@
             // 
             // gamePathTextBox
             // 
-            this.gamePathTextBox.Location = new System.Drawing.Point(107, 16);
+            this.gamePathTextBox.Location = new System.Drawing.Point(102, 16);
             this.gamePathTextBox.Name = "gamePathTextBox";
             this.gamePathTextBox.ReadOnly = true;
             this.gamePathTextBox.Size = new System.Drawing.Size(530, 22);
@@ -219,7 +223,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 51);
+            this.label2.Location = new System.Drawing.Point(13, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(377, 17);
             this.label2.TabIndex = 2;
@@ -228,7 +232,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 17);
+            this.label1.Location = new System.Drawing.Point(13, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 17);
             this.label1.TabIndex = 0;
@@ -286,6 +290,26 @@
             this.modDescription.Name = "modDescription";
             this.modDescription.ReadOnly = true;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(400, 577);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(258, 17);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://www.paypal.me/danielgriffithsdev";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 577);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(381, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Find this tool useful? Consider buying me a cup of coffee 😉";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,6 +356,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modAuthor;
         private System.Windows.Forms.DataGridViewTextBoxColumn modVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn modDescription;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
