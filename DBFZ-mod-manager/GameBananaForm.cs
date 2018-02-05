@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -57,14 +58,20 @@ namespace ModManager
             try
             {
                 WebClient wc = new WebClient();
+                string tempDir = AppDomain.CurrentDomain.BaseDirectory + @"\temp\";
+                string fileName = tempDir + "temp.zip";                
 
-                string fileName = AppDomain.CurrentDomain.BaseDirectory + @"\temp\temp.zip";
+                if (!Directory.Exists(tempDir))
+                {
+                    Directory.CreateDirectory(tempDir);
+                }
 
                 wc.DownloadFile(this.downloadUrl, fileName);
 
                 if (Mod.Add(fileName))
                 {
                     MessageBox.Show("Mod successfully installed!");
+                    Application.Exit();
                 }
                 else
                 {
