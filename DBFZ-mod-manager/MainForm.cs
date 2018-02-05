@@ -84,6 +84,7 @@ namespace ModManager
                 var details = Mod.Detail(path + name + ".ini");
 
                 this.modsList.Rows.Add(
+                    name,
                     active, 
                     (string.IsNullOrEmpty(details["Name"])) 
                         ? Regex.Replace(name, "(^[a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]+)", " $1", System.Text.RegularExpressions.RegexOptions.Compiled).Trim() 
@@ -126,19 +127,19 @@ namespace ModManager
             foreach (DataGridViewRow row in this.modsList.Rows)
             {
                 string active = row.Cells["modsActive"].Value.ToString();
-                string name = row.Cells["modsName"].Value.ToString();
+                string name = row.Cells["modsFileName"].Value.ToString();
 
                 if (active == "True")
                 {
                     Mod.Move(InactiveModPath() + name + ".pak", ActiveModPath() + name + ".pak");
-                    Mod.Move(this.InactiveModPath() + name + ".sig", ActiveModPath() + name + ".sig");
-                    Mod.Move(this.InactiveModPath() + name + ".ini", ActiveModPath() + name + ".ini");
+                    Mod.Move(InactiveModPath() + name + ".sig", ActiveModPath() + name + ".sig");
+                    Mod.Move(InactiveModPath() + name + ".ini", ActiveModPath() + name + ".ini");
                 }
                 else
                 {
                     Mod.Move(ActiveModPath() + name + ".pak", InactiveModPath() + name + ".pak");
                     Mod.Move(ActiveModPath() + name + ".sig", InactiveModPath() + name + ".sig");
-                    Mod.Move(this.InactiveModPath() + name + ".ini", ActiveModPath() + name + ".ini");
+                    Mod.Move(ActiveModPath() + name + ".ini", InactiveModPath() + name + ".ini");
                 }
             }
         }

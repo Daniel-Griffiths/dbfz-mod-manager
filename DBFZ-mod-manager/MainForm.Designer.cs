@@ -46,13 +46,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.modName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.modsFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.modsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modsList)).BeginInit();
@@ -130,6 +131,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.modsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.modsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.modsFileName,
             this.modsActive,
             this.modsName,
             this.modAuthor,
@@ -255,6 +257,32 @@
             this.modActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.modActive.Width = 70;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(400, 577);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(258, 17);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://www.paypal.me/danielgriffithsdev";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 577);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(381, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Find this tool useful? Consider buying me a cup of coffee 😉";
+            // 
+            // modsFileName
+            // 
+            this.modsFileName.HeaderText = "FileName";
+            this.modsFileName.Name = "modsFileName";
+            this.modsFileName.Visible = false;
+            // 
             // modsActive
             // 
             this.modsActive.FillWeight = 70F;
@@ -289,26 +317,6 @@
             this.modDescription.HeaderText = "Description";
             this.modDescription.Name = "modDescription";
             this.modDescription.ReadOnly = true;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(400, 577);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(258, 17);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "https://www.paypal.me/danielgriffithsdev";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 577);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(381, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Find this tool useful? Consider buying me a cup of coffee 😉";
             // 
             // MainForm
             // 
@@ -351,13 +359,14 @@
         private System.Windows.Forms.Button gamePathBtn;
         private System.Windows.Forms.TextBox gamePathTextBox;
         private System.Windows.Forms.Button installModBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modsFileName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn modsActive;
         private System.Windows.Forms.DataGridViewTextBoxColumn modsName;
         private System.Windows.Forms.DataGridViewTextBoxColumn modAuthor;
         private System.Windows.Forms.DataGridViewTextBoxColumn modVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn modDescription;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
