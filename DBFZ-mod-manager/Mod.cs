@@ -80,11 +80,19 @@ namespace ModManager
             // Hunt the archive for .pak and .sig files
             foreach (string mod in Directory.GetFiles(tempDir, "*.pak", SearchOption.AllDirectories)) {
                 installed = true;
-                // Move the mod file
-                Move(mod, Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod));
-                // Pretty hacky way of getting .sig/.ini, need to change this.
-                Move(mod.Replace(".pak", ".sig"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak",".sig"));
-                Move(mod.Replace(".pak", ".ini"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak", ".ini"));
+
+                if (File.Exists(Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod))){
+                    DialogResult dialogResult = MessageBox.Show("A mod with this name already exists, do you want to overwrite it?", "Overwrite Mod", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes) {
+                        Move(mod, Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod));
+                        Move(mod.Replace(".pak", ".sig"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak", ".sig"));
+                        Move(mod.Replace(".pak", ".ini"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak", ".ini"));
+                    }
+                } else {
+                    Move(mod, Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod));
+                    Move(mod.Replace(".pak", ".sig"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak", ".sig"));
+                    Move(mod.Replace(".pak", ".ini"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak", ".ini"));
+                }
             }
 
             // Delete the temp files
