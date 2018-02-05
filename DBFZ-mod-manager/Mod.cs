@@ -58,9 +58,10 @@ namespace ModManager
         }
 
         // Adds a new mod
-        public static void Add(string path)
+        public static bool Add(string path)
         {
             string tempDir = AppDomain.CurrentDomain.BaseDirectory + @"\temp";
+            bool installed = false;
 
             // Unzip the files to a temp dir
             using (Stream stream = File.OpenRead(path))
@@ -77,6 +78,7 @@ namespace ModManager
 
             // Hunt the archive for .pak and .sig files
             foreach (string mod in Directory.GetFiles(tempDir, "*.pak", SearchOption.AllDirectories)) {
+                installed = true;
                 // Move the mod file
                 Move(mod, Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod));
                 // Pretty hacky way of getting .sig/.ini, need to change this.
@@ -86,6 +88,8 @@ namespace ModManager
 
             // Delete the temp files
             Delete(tempDir);
+
+            return installed;
         }
     }
 }

@@ -188,12 +188,17 @@ namespace ModManager
             file.Filter = "ZIP (*.ZIP,*.zip,*.RAR,*.rar)|*.ZIP;*.zip;*.RAR;*.rar";
             if (file.ShowDialog() == DialogResult.OK)
             {
-                Mod.Add(file.FileName);
+                if (Mod.Add(file.FileName))
+                {
+                    // Reload mod list
+                    this.LoadModsList();
 
-                // Reload mod list
-                this.LoadModsList();
-
-                MessageBox.Show("Mod successfully installed!");
+                    MessageBox.Show("Mod successfully installed!");
+                }
+                else
+                {
+                    MessageBox.Show("No mods could be found in this zip file!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
