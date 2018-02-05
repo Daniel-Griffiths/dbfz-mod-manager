@@ -35,25 +35,25 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.installModBtn = new System.Windows.Forms.Button();
             this.modsList = new System.Windows.Forms.DataGridView();
-            this.patchExe = new System.Windows.Forms.Button();
-            this.openModsFolderBtn = new System.Windows.Forms.Button();
-            this.refreshModsListBtn = new System.Windows.Forms.Button();
-            this.disableEasyAntiCheatBtn = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gamePathBtn = new System.Windows.Forms.Button();
-            this.gamePathTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.modName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
             this.modsFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.modsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patchExe = new System.Windows.Forms.Button();
+            this.openModsFolderBtn = new System.Windows.Forms.Button();
+            this.refreshModsListBtn = new System.Windows.Forms.Button();
+            this.disableEasyAntiCheatBtn = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.gamePathBtn = new System.Windows.Forms.Button();
+            this.gamePathTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.modName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modsList)).BeginInit();
@@ -144,6 +144,47 @@
             this.modsList.Size = new System.Drawing.Size(1060, 554);
             this.modsList.TabIndex = 0;
             // 
+            // modsFileName
+            // 
+            this.modsFileName.HeaderText = "FileName";
+            this.modsFileName.Name = "modsFileName";
+            this.modsFileName.Visible = false;
+            // 
+            // modsActive
+            // 
+            this.modsActive.FillWeight = 70F;
+            this.modsActive.HeaderText = "Active";
+            this.modsActive.Name = "modsActive";
+            this.modsActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.modsActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.modsActive.Width = 70;
+            // 
+            // modsName
+            // 
+            this.modsName.HeaderText = "Name";
+            this.modsName.Name = "modsName";
+            this.modsName.ReadOnly = true;
+            this.modsName.Width = 200;
+            // 
+            // modAuthor
+            // 
+            this.modAuthor.HeaderText = "Author";
+            this.modAuthor.Name = "modAuthor";
+            this.modAuthor.ReadOnly = true;
+            // 
+            // modVersion
+            // 
+            this.modVersion.HeaderText = "Version";
+            this.modVersion.Name = "modVersion";
+            this.modVersion.ReadOnly = true;
+            // 
+            // modDescription
+            // 
+            this.modDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.modDescription.HeaderText = "Description";
+            this.modDescription.Name = "modDescription";
+            this.modDescription.ReadOnly = true;
+            // 
             // patchExe
             // 
             this.patchExe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -204,6 +245,26 @@
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 577);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(381, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Find this tool useful? Consider buying me a cup of coffee 😉";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(400, 577);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(258, 17);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://www.paypal.me/danielgriffithsdev";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // gamePathBtn
             // 
             this.gamePathBtn.Location = new System.Drawing.Point(638, 15);
@@ -256,67 +317,6 @@
             this.modActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.modActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.modActive.Width = 70;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(400, 577);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(258, 17);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "https://www.paypal.me/danielgriffithsdev";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 577);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(381, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Find this tool useful? Consider buying me a cup of coffee 😉";
-            // 
-            // modsFileName
-            // 
-            this.modsFileName.HeaderText = "FileName";
-            this.modsFileName.Name = "modsFileName";
-            this.modsFileName.Visible = false;
-            // 
-            // modsActive
-            // 
-            this.modsActive.FillWeight = 70F;
-            this.modsActive.HeaderText = "Active";
-            this.modsActive.Name = "modsActive";
-            this.modsActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.modsActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.modsActive.Width = 70;
-            // 
-            // modsName
-            // 
-            this.modsName.HeaderText = "Name";
-            this.modsName.Name = "modsName";
-            this.modsName.ReadOnly = true;
-            this.modsName.Width = 200;
-            // 
-            // modAuthor
-            // 
-            this.modAuthor.HeaderText = "Author";
-            this.modAuthor.Name = "modAuthor";
-            this.modAuthor.ReadOnly = true;
-            // 
-            // modVersion
-            // 
-            this.modVersion.HeaderText = "Version";
-            this.modVersion.Name = "modVersion";
-            this.modVersion.ReadOnly = true;
-            // 
-            // modDescription
-            // 
-            this.modDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.modDescription.HeaderText = "Description";
-            this.modDescription.Name = "modDescription";
-            this.modDescription.ReadOnly = true;
             // 
             // MainForm
             // 
