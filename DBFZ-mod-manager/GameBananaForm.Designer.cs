@@ -59,10 +59,13 @@
             // 
             // modImage
             // 
-            this.modImage.Location = new System.Drawing.Point(376, 31);
+            this.modImage.BackColor = System.Drawing.Color.Black;
+            this.modImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.modImage.InitialImage = null;
+            this.modImage.Location = new System.Drawing.Point(376, 30);
             this.modImage.Name = "modImage";
-            this.modImage.Size = new System.Drawing.Size(417, 253);
-            this.modImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.modImage.Size = new System.Drawing.Size(448, 254);
+            this.modImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.modImage.TabIndex = 2;
             this.modImage.TabStop = false;
             // 
@@ -92,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 337);
+            this.ClientSize = new System.Drawing.Size(836, 337);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.installModBtn);
             this.Controls.Add(this.modImage);
@@ -103,6 +106,7 @@
             this.Name = "GameBananaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Install Mod";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameBananaForm_FormClosing);
             this.Load += new System.EventHandler(this.GameBananaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.modImage)).EndInit();
             this.ResumeLayout(false);

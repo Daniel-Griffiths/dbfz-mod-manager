@@ -27,13 +27,13 @@ namespace ModManager
         public void SetContent(List<System.Xml.Linq.XElement> values)
         {
             modName.Text = values[0].Value;
-            modDescription.Text = ParseHtml(values[1].Value) + ParseHtml(values[2].Value);
+            modDescription.Text = StripHtml(values[1].Value) + StripHtml(values[2].Value);
             //string modUserId = values[3].Value;
             modImage.Load(values[4].Value);
             
         }
 
-        public string ParseHtml(string html)
+        public string StripHtml(string html)
         {
             return Regex.Replace(
                 html
@@ -82,6 +82,11 @@ namespace ModManager
             {
                 MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }            
+        }
+
+        private void GameBananaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
