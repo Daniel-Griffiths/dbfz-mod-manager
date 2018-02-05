@@ -21,19 +21,9 @@ namespace ModManager
         {
             gamePathTextBox.Text = this.GamePath;
 
-            // Register custom URL protocol
-            /*try
-            {
-                RegistryKey Key = Registry.ClassesRoot.CreateSubKey("dbfmm");
-                Key.CreateSubKey("DefaultIcon").SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + ",1");
-                Key.SetValue("", "dbfmm:Protocol");
-                Key.SetValue("URL Protocol", "");
-                Key.CreateSubKey(@"shell\open\command").SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + " % 1");
-            }
-            catch (Exception)
-            {
-        
-            }*/
+            // Check if the exe was opened from gamebanana
+            Protocol.Register();
+            GameBanana.Process(Environment.GetCommandLineArgs());
 
             // check if the user has the game installed on thier primary drive 
             if (Directory.Exists(this.GamePath))
@@ -46,7 +36,8 @@ namespace ModManager
             }
         }
 
-        public string ActiveModPath() {
+        public string ActiveModPath()
+        {
             return this.GamePath + @"RED\Content\Paks\~mods\";
         }
 
