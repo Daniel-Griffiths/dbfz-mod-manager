@@ -25,6 +25,18 @@ After that the mod should be installed, just click `Save and Play` to try it out
 
 Mods can also be installed manually by putting them in the `~mods` folder. Click the `Open Mods Folder` to access this directory.
 
+## Mod Info
+
+Modders can optionally include a .ini file with their mod to add extra information such as Name, Author, Version and Description. This file **must**
+have the some name as the `.pak` file (eg BaseGoku.pak would come with a file called BaseGoku.ini). Please see the example below:-
+
+```
+Name=Base Goku 
+Author=Daniel Griffiths
+Description=Adds base Gokus model over SSJ Goku
+Version=1.0
+```
+
 ## Donate
 
 Find this tool useful? Consider buying me a cup of coffee 😉
