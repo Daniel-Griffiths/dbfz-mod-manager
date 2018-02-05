@@ -111,7 +111,7 @@
             // installModBtn
             // 
             this.installModBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.installModBtn.Location = new System.Drawing.Point(6, 568);
+            this.installModBtn.Location = new System.Drawing.Point(6, 567);
             this.installModBtn.Name = "installModBtn";
             this.installModBtn.Size = new System.Drawing.Size(174, 35);
             this.installModBtn.TabIndex = 8;
@@ -154,7 +154,7 @@
             // openModsFolderBtn
             // 
             this.openModsFolderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.openModsFolderBtn.Location = new System.Drawing.Point(365, 568);
+            this.openModsFolderBtn.Location = new System.Drawing.Point(365, 567);
             this.openModsFolderBtn.Name = "openModsFolderBtn";
             this.openModsFolderBtn.Size = new System.Drawing.Size(174, 35);
             this.openModsFolderBtn.TabIndex = 2;
@@ -165,7 +165,7 @@
             // refreshModsListBtn
             // 
             this.refreshModsListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.refreshModsListBtn.Location = new System.Drawing.Point(185, 568);
+            this.refreshModsListBtn.Location = new System.Drawing.Point(185, 567);
             this.refreshModsListBtn.Name = "refreshModsListBtn";
             this.refreshModsListBtn.Size = new System.Drawing.Size(174, 35);
             this.refreshModsListBtn.TabIndex = 3;
@@ -193,14 +193,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1076, 477);
+            this.tabPage2.Size = new System.Drawing.Size(1076, 609);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // gamePathBtn
             // 
-            this.gamePathBtn.Location = new System.Drawing.Point(388, 14);
+            this.gamePathBtn.Location = new System.Drawing.Point(643, 15);
             this.gamePathBtn.Name = "gamePathBtn";
             this.gamePathBtn.Size = new System.Drawing.Size(35, 26);
             this.gamePathBtn.TabIndex = 4;
@@ -213,7 +213,7 @@
             this.gamePathTextBox.Location = new System.Drawing.Point(107, 16);
             this.gamePathTextBox.Name = "gamePathTextBox";
             this.gamePathTextBox.ReadOnly = true;
-            this.gamePathTextBox.Size = new System.Drawing.Size(275, 22);
+            this.gamePathTextBox.Size = new System.Drawing.Size(530, 22);
             this.gamePathTextBox.TabIndex = 3;
             // 
             // label2
@@ -295,7 +295,7 @@
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.startGameBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(753, 524);
+            this.MinimumSize = new System.Drawing.Size(1100, 729);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DBFZ Mod Manager";
