@@ -41,7 +41,7 @@
             // 
             this.modName.AutoSize = true;
             this.modName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modName.Location = new System.Drawing.Point(13, 9);
+            this.modName.Location = new System.Drawing.Point(13, 7);
             this.modName.Name = "modName";
             this.modName.Size = new System.Drawing.Size(131, 18);
             this.modName.TabIndex = 0;
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 337);
+            this.ClientSize = new System.Drawing.Size(840, 337);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.installModBtn);
             this.Controls.Add(this.modImage);
