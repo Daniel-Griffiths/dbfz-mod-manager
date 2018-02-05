@@ -33,13 +33,12 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.installModBtn = new System.Windows.Forms.Button();
             this.modsList = new System.Windows.Forms.DataGridView();
-            this.modsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.modsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patchExe = new System.Windows.Forms.Button();
+            this.openModsFolderBtn = new System.Windows.Forms.Button();
             this.refreshModsListBtn = new System.Windows.Forms.Button();
             this.disableEasyAntiCheatBtn = new System.Windows.Forms.Button();
-            this.openModsFolderBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gamePathBtn = new System.Windows.Forms.Button();
             this.gamePathTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +46,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.modName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.installModBtn = new System.Windows.Forms.Button();
+            this.modsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.modsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modsList)).BeginInit();
@@ -105,6 +108,17 @@
             this.tabPage1.Text = "Mods";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // installModBtn
+            // 
+            this.installModBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.installModBtn.Location = new System.Drawing.Point(6, 436);
+            this.installModBtn.Name = "installModBtn";
+            this.installModBtn.Size = new System.Drawing.Size(174, 35);
+            this.installModBtn.TabIndex = 8;
+            this.installModBtn.Text = "Install Mod";
+            this.installModBtn.UseVisualStyleBackColor = true;
+            this.installModBtn.Click += new System.EventHandler(this.installModBtn_Click);
+            // 
             // modsList
             // 
             this.modsList.AllowUserToAddRows = false;
@@ -115,29 +129,16 @@
             this.modsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.modsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.modsActive,
-            this.modsName});
+            this.modsName,
+            this.modAuthor,
+            this.modVersion,
+            this.modDescription});
             this.modsList.Location = new System.Drawing.Point(6, 6);
             this.modsList.Name = "modsList";
             this.modsList.RowHeadersVisible = false;
             this.modsList.RowTemplate.Height = 24;
             this.modsList.Size = new System.Drawing.Size(1060, 422);
             this.modsList.TabIndex = 0;
-            // 
-            // modsActive
-            // 
-            this.modsActive.FillWeight = 70F;
-            this.modsActive.HeaderText = "Active";
-            this.modsActive.Name = "modsActive";
-            this.modsActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.modsActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.modsActive.Width = 70;
-            // 
-            // modsName
-            // 
-            this.modsName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.modsName.HeaderText = "Name";
-            this.modsName.Name = "modsName";
-            this.modsName.ReadOnly = true;
             // 
             // patchExe
             // 
@@ -149,6 +150,17 @@
             this.patchExe.Text = "Patch Exe";
             this.patchExe.UseVisualStyleBackColor = true;
             this.patchExe.Click += new System.EventHandler(this.patchExe_Click);
+            // 
+            // openModsFolderBtn
+            // 
+            this.openModsFolderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.openModsFolderBtn.Location = new System.Drawing.Point(365, 436);
+            this.openModsFolderBtn.Name = "openModsFolderBtn";
+            this.openModsFolderBtn.Size = new System.Drawing.Size(174, 35);
+            this.openModsFolderBtn.TabIndex = 2;
+            this.openModsFolderBtn.Text = "Open Mods Folder";
+            this.openModsFolderBtn.UseVisualStyleBackColor = true;
+            this.openModsFolderBtn.Click += new System.EventHandler(this.openModsFolderBtn_Click);
             // 
             // refreshModsListBtn
             // 
@@ -172,17 +184,6 @@
             this.disableEasyAntiCheatBtn.UseVisualStyleBackColor = true;
             this.disableEasyAntiCheatBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // openModsFolderBtn
-            // 
-            this.openModsFolderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.openModsFolderBtn.Location = new System.Drawing.Point(365, 436);
-            this.openModsFolderBtn.Name = "openModsFolderBtn";
-            this.openModsFolderBtn.Size = new System.Drawing.Size(174, 35);
-            this.openModsFolderBtn.TabIndex = 2;
-            this.openModsFolderBtn.Text = "Open Mods Folder";
-            this.openModsFolderBtn.UseVisualStyleBackColor = true;
-            this.openModsFolderBtn.Click += new System.EventHandler(this.openModsFolderBtn_Click);
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.gamePathBtn);
@@ -192,7 +193,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(813, 477);
+            this.tabPage2.Size = new System.Drawing.Size(1076, 477);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -250,16 +251,40 @@
             this.modActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.modActive.Width = 70;
             // 
-            // installModBtn
+            // modsActive
             // 
-            this.installModBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.installModBtn.Location = new System.Drawing.Point(6, 436);
-            this.installModBtn.Name = "installModBtn";
-            this.installModBtn.Size = new System.Drawing.Size(174, 35);
-            this.installModBtn.TabIndex = 8;
-            this.installModBtn.Text = "Install Mod";
-            this.installModBtn.UseVisualStyleBackColor = true;
-            this.installModBtn.Click += new System.EventHandler(this.installModBtn_Click);
+            this.modsActive.FillWeight = 70F;
+            this.modsActive.HeaderText = "Active";
+            this.modsActive.Name = "modsActive";
+            this.modsActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.modsActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.modsActive.Width = 70;
+            // 
+            // modsName
+            // 
+            this.modsName.HeaderText = "Name";
+            this.modsName.Name = "modsName";
+            this.modsName.ReadOnly = true;
+            this.modsName.Width = 200;
+            // 
+            // modAuthor
+            // 
+            this.modAuthor.HeaderText = "Author";
+            this.modAuthor.Name = "modAuthor";
+            this.modAuthor.ReadOnly = true;
+            // 
+            // modVersion
+            // 
+            this.modVersion.HeaderText = "Version";
+            this.modVersion.Name = "modVersion";
+            this.modVersion.ReadOnly = true;
+            // 
+            // modDescription
+            // 
+            this.modDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.modDescription.HeaderText = "Description";
+            this.modDescription.Name = "modDescription";
+            this.modDescription.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -297,13 +322,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn modActive;
         private System.Windows.Forms.DataGridView modsList;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn modsActive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modsName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button gamePathBtn;
         private System.Windows.Forms.TextBox gamePathTextBox;
         private System.Windows.Forms.Button installModBtn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn modsActive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modsName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modVersion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modDescription;
     }
 }
 

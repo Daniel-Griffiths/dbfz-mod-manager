@@ -77,7 +77,18 @@ namespace ModManager
             foreach (string file in files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                this.modsList.Rows.Add(active, fileInfo.Name.Replace(".pak", ""), file);
+                string name = Path.GetFileNameWithoutExtension(fileInfo.Name);
+                
+                // Load mod details if an ini exists
+                var details = Mod.Detail(path + name + ".ini");
+
+                this.modsList.Rows.Add(
+                    active, 
+                    (string.IsNullOrEmpty(details["Name"])) ? name : details["Name"],  // fallback to file name if no ini is present
+                    details["Author"], 
+                    details["Version"], 
+                    details["Description"]
+                );
             }
         }
 
@@ -118,11 +129,13 @@ namespace ModManager
                 {
                     Mod.Move(InactiveModPath() + name + ".pak", ActiveModPath() + name + ".pak");
                     Mod.Move(this.InactiveModPath() + name + ".sig", ActiveModPath() + name + ".sig");
+                    Mod.Move(this.InactiveModPath() + name + ".ini", ActiveModPath() + name + ".ini");
                 }
                 else
                 {
                     Mod.Move(ActiveModPath() + name + ".pak", InactiveModPath() + name + ".pak");
                     Mod.Move(ActiveModPath() + name + ".sig", InactiveModPath() + name + ".sig");
+                    Mod.Move(this.InactiveModPath() + name + ".ini", ActiveModPath() + name + ".ini");
                 }
             }
         }
