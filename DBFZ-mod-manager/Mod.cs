@@ -1,8 +1,8 @@
-﻿using SharpCompress.Readers;
-using System;
-using System.Collections.Specialized;
+﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using SharpCompress.Readers;
+using System.Collections.Specialized;
 
 namespace ModManager
 {
@@ -36,6 +36,7 @@ namespace ModManager
             Directory.Delete(path);
         }
 
+        // Gets the details from the mod ini
         public static NameValueCollection Detail(string path)
         {
             NameValueCollection finalDescription = new NameValueCollection();
