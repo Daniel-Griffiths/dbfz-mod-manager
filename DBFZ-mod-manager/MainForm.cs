@@ -130,7 +130,7 @@ namespace ModManager
 
         private void patchExe_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to patch DragonBallFighterZ.exe? \n\n (This is required to use mods and can be reverted at any time by going into Steam and choosing 'Verify Integrity of Game Files')", "Patch DragonBallFighterZ.exe", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to patch DragonBallFighterZ.exe? \n\n (This can be reverted at any time by going into Steam and choosing 'Verify Integrity of Game Files')", "Patch DragonBallFighterZ.exe", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes) {
                 try {
                     File.WriteAllBytes(this.GamePath + "DBFighterZ.exe", Properties.Resources.DBFighterZ);
@@ -141,7 +141,7 @@ namespace ModManager
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void disableEasyAntiCheatBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Once EasyAntiCheat opens, choose 'Dragon Ball Fighter Z' and click uninstall.");
             Process.Start(this.GamePath + @"EasyAntiCheat\EasyAntiCheat_Setup.exe");

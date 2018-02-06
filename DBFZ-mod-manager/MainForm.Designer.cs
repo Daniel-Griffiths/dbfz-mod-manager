@@ -41,10 +41,8 @@
             this.modAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patchExe = new System.Windows.Forms.Button();
             this.openModsFolderBtn = new System.Windows.Forms.Button();
             this.refreshModsListBtn = new System.Windows.Forms.Button();
-            this.disableEasyAntiCheatBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -54,10 +52,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.modName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.patchExe = new System.Windows.Forms.Button();
+            this.disableEasyAntiCheatBtn = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modsList)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // startGameBtn
@@ -102,10 +106,8 @@
             // 
             this.tabPage1.Controls.Add(this.installModBtn);
             this.tabPage1.Controls.Add(this.modsList);
-            this.tabPage1.Controls.Add(this.patchExe);
             this.tabPage1.Controls.Add(this.openModsFolderBtn);
             this.tabPage1.Controls.Add(this.refreshModsListBtn);
-            this.tabPage1.Controls.Add(this.disableEasyAntiCheatBtn);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
@@ -191,18 +193,6 @@
             this.modDescription.Name = "modDescription";
             this.modDescription.ReadOnly = true;
             // 
-            // patchExe
-            // 
-            this.patchExe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.patchExe.Location = new System.Drawing.Point(669, 461);
-            this.patchExe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.patchExe.Name = "patchExe";
-            this.patchExe.Size = new System.Drawing.Size(130, 28);
-            this.patchExe.TabIndex = 6;
-            this.patchExe.Text = "Patch Exe";
-            this.patchExe.UseVisualStyleBackColor = true;
-            this.patchExe.Click += new System.EventHandler(this.patchExe_Click);
-            // 
             // openModsFolderBtn
             // 
             this.openModsFolderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -227,26 +217,12 @@
             this.refreshModsListBtn.UseVisualStyleBackColor = true;
             this.refreshModsListBtn.Click += new System.EventHandler(this.refreshModsList_Click);
             // 
-            // disableEasyAntiCheatBtn
-            // 
-            this.disableEasyAntiCheatBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.disableEasyAntiCheatBtn.Location = new System.Drawing.Point(534, 461);
-            this.disableEasyAntiCheatBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.disableEasyAntiCheatBtn.Name = "disableEasyAntiCheatBtn";
-            this.disableEasyAntiCheatBtn.Size = new System.Drawing.Size(130, 28);
-            this.disableEasyAntiCheatBtn.TabIndex = 7;
-            this.disableEasyAntiCheatBtn.Text = "Disable EasyAntiCheat";
-            this.disableEasyAntiCheatBtn.UseVisualStyleBackColor = true;
-            this.disableEasyAntiCheatBtn.Click += new System.EventHandler(this.button1_Click);
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.linkLabel1);
-            this.tabPage2.Controls.Add(this.gamePathBtn);
-            this.tabPage2.Controls.Add(this.gamePathTextBox);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
@@ -280,7 +256,7 @@
             // 
             // gamePathBtn
             // 
-            this.gamePathBtn.Location = new System.Drawing.Point(478, 12);
+            this.gamePathBtn.Location = new System.Drawing.Point(473, 14);
             this.gamePathBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gamePathBtn.Name = "gamePathBtn";
             this.gamePathBtn.Size = new System.Drawing.Size(26, 21);
@@ -291,7 +267,7 @@
             // 
             // gamePathTextBox
             // 
-            this.gamePathTextBox.Location = new System.Drawing.Point(76, 13);
+            this.gamePathTextBox.Location = new System.Drawing.Point(71, 15);
             this.gamePathTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gamePathTextBox.Name = "gamePathTextBox";
             this.gamePathTextBox.ReadOnly = true;
@@ -301,7 +277,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 41);
+            this.label2.Location = new System.Drawing.Point(5, 43);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(278, 13);
@@ -311,7 +287,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 14);
+            this.label1.Location = new System.Drawing.Point(5, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
@@ -335,6 +311,55 @@
             this.modActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.modActive.Width = 70;
             // 
+            // patchExe
+            // 
+            this.patchExe.Location = new System.Drawing.Point(8, 20);
+            this.patchExe.Margin = new System.Windows.Forms.Padding(2);
+            this.patchExe.Name = "patchExe";
+            this.patchExe.Size = new System.Drawing.Size(130, 28);
+            this.patchExe.TabIndex = 8;
+            this.patchExe.Text = "Patch Exe";
+            this.patchExe.UseVisualStyleBackColor = true;
+            this.patchExe.Click += new System.EventHandler(this.patchExe_Click);
+            // 
+            // disableEasyAntiCheatBtn
+            // 
+            this.disableEasyAntiCheatBtn.Location = new System.Drawing.Point(142, 20);
+            this.disableEasyAntiCheatBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.disableEasyAntiCheatBtn.Name = "disableEasyAntiCheatBtn";
+            this.disableEasyAntiCheatBtn.Size = new System.Drawing.Size(130, 28);
+            this.disableEasyAntiCheatBtn.TabIndex = 9;
+            this.disableEasyAntiCheatBtn.Text = "Disable EasyAntiCheat";
+            this.disableEasyAntiCheatBtn.UseVisualStyleBackColor = true;
+            this.disableEasyAntiCheatBtn.Click += new System.EventHandler(this.disableEasyAntiCheatBtn_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.gamePathTextBox);
+            this.groupBox1.Controls.Add(this.gamePathBtn);
+            this.groupBox1.Location = new System.Drawing.Point(9, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(788, 71);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.disableEasyAntiCheatBtn);
+            this.groupBox2.Controls.Add(this.patchExe);
+            this.groupBox2.Location = new System.Drawing.Point(9, 82);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(788, 60);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Misc (Not necessary, but might be required for certain mods)";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +380,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.modsList)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -365,9 +393,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button patchExe;
         private System.Windows.Forms.Button refreshModsListBtn;
-        private System.Windows.Forms.Button disableEasyAntiCheatBtn;
         private System.Windows.Forms.Button openModsFolderBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn modActive;
@@ -385,6 +411,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modAuthor;
         private System.Windows.Forms.DataGridViewTextBoxColumn modVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn modDescription;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button disableEasyAntiCheatBtn;
+        private System.Windows.Forms.Button patchExe;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
