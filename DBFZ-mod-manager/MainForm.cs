@@ -61,9 +61,7 @@ namespace ModManager
                 Directory.CreateDirectory(path);
             }
 
-            string[] files = Directory.GetFiles(path, "*.pak");
-
-            foreach (string file in files) {
+            foreach (string file in Directory.GetFiles(path, "*.pak")) {
                 FileInfo fileInfo = new FileInfo(file);
                 string name = Path.GetFileNameWithoutExtension(fileInfo.Name);
 
