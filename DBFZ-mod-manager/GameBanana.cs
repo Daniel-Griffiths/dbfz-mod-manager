@@ -22,6 +22,7 @@ namespace ModManager
                     ).Split(
                         new string[] { "," }, StringSplitOptions.None
                     );
+
                     string url = parameters[0];
                     string type = parameters[1];
                     string id = parameters[2];
