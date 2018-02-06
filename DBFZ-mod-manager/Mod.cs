@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using SharpCompress.Readers;
 using System.Collections.Specialized;
+using SharpCompress.Archives;
 
 namespace ModManager
 {
@@ -62,8 +63,8 @@ namespace ModManager
             bool installed = false;
 
             // Unzip the files to a temp dir
-            using (Stream stream = File.OpenRead(path)) {
-                var reader = ReaderFactory.Open(stream);
+            using (var archive = ArchiveFactory.Open(path)) {
+                var reader = archive.ExtractAllEntries();
                 while (reader.MoveToNextEntry()) {
                     if (!reader.Entry.IsDirectory) {
                         reader.WriteEntryToDirectory(tempDir, new ExtractionOptions() { ExtractFullPath = true, Overwrite = true });

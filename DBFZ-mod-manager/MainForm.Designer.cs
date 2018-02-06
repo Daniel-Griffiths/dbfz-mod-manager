@@ -63,9 +63,10 @@
             // startGameBtn
             // 
             this.startGameBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startGameBtn.Location = new System.Drawing.Point(10, 642);
+            this.startGameBtn.Location = new System.Drawing.Point(8, 522);
+            this.startGameBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.startGameBtn.Name = "startGameBtn";
-            this.startGameBtn.Size = new System.Drawing.Size(174, 35);
+            this.startGameBtn.Size = new System.Drawing.Size(130, 28);
             this.startGameBtn.TabIndex = 1;
             this.startGameBtn.Text = "Save and Play";
             this.startGameBtn.UseVisualStyleBackColor = true;
@@ -74,9 +75,10 @@
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveBtn.Location = new System.Drawing.Point(189, 642);
+            this.saveBtn.Location = new System.Drawing.Point(142, 522);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(174, 35);
+            this.saveBtn.Size = new System.Drawing.Size(130, 28);
             this.saveBtn.TabIndex = 5;
             this.saveBtn.Text = "Save ";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -90,9 +92,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1084, 638);
+            this.tabControl1.Size = new System.Drawing.Size(813, 518);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -103,10 +106,11 @@
             this.tabPage1.Controls.Add(this.openModsFolderBtn);
             this.tabPage1.Controls.Add(this.refreshModsListBtn);
             this.tabPage1.Controls.Add(this.disableEasyAntiCheatBtn);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1076, 609);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(805, 492);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mods";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -114,9 +118,10 @@
             // installModBtn
             // 
             this.installModBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.installModBtn.Location = new System.Drawing.Point(6, 567);
+            this.installModBtn.Location = new System.Drawing.Point(4, 461);
+            this.installModBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.installModBtn.Name = "installModBtn";
-            this.installModBtn.Size = new System.Drawing.Size(174, 35);
+            this.installModBtn.Size = new System.Drawing.Size(130, 28);
             this.installModBtn.TabIndex = 8;
             this.installModBtn.Text = "Install Mod";
             this.installModBtn.UseVisualStyleBackColor = true;
@@ -137,11 +142,12 @@
             this.modAuthor,
             this.modVersion,
             this.modDescription});
-            this.modsList.Location = new System.Drawing.Point(6, 6);
+            this.modsList.Location = new System.Drawing.Point(4, 5);
+            this.modsList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modsList.Name = "modsList";
             this.modsList.RowHeadersVisible = false;
             this.modsList.RowTemplate.Height = 24;
-            this.modsList.Size = new System.Drawing.Size(1060, 554);
+            this.modsList.Size = new System.Drawing.Size(795, 450);
             this.modsList.TabIndex = 0;
             // 
             // modsFileName
@@ -188,9 +194,10 @@
             // patchExe
             // 
             this.patchExe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.patchExe.Location = new System.Drawing.Point(892, 567);
+            this.patchExe.Location = new System.Drawing.Point(669, 461);
+            this.patchExe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.patchExe.Name = "patchExe";
-            this.patchExe.Size = new System.Drawing.Size(174, 35);
+            this.patchExe.Size = new System.Drawing.Size(130, 28);
             this.patchExe.TabIndex = 6;
             this.patchExe.Text = "Patch Exe";
             this.patchExe.UseVisualStyleBackColor = true;
@@ -199,9 +206,10 @@
             // openModsFolderBtn
             // 
             this.openModsFolderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.openModsFolderBtn.Location = new System.Drawing.Point(365, 567);
+            this.openModsFolderBtn.Location = new System.Drawing.Point(274, 461);
+            this.openModsFolderBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.openModsFolderBtn.Name = "openModsFolderBtn";
-            this.openModsFolderBtn.Size = new System.Drawing.Size(174, 35);
+            this.openModsFolderBtn.Size = new System.Drawing.Size(130, 28);
             this.openModsFolderBtn.TabIndex = 2;
             this.openModsFolderBtn.Text = "Open Mods Folder";
             this.openModsFolderBtn.UseVisualStyleBackColor = true;
@@ -210,9 +218,10 @@
             // refreshModsListBtn
             // 
             this.refreshModsListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.refreshModsListBtn.Location = new System.Drawing.Point(185, 567);
+            this.refreshModsListBtn.Location = new System.Drawing.Point(139, 461);
+            this.refreshModsListBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.refreshModsListBtn.Name = "refreshModsListBtn";
-            this.refreshModsListBtn.Size = new System.Drawing.Size(174, 35);
+            this.refreshModsListBtn.Size = new System.Drawing.Size(130, 28);
             this.refreshModsListBtn.TabIndex = 3;
             this.refreshModsListBtn.Text = "Refresh Mods List";
             this.refreshModsListBtn.UseVisualStyleBackColor = true;
@@ -221,9 +230,10 @@
             // disableEasyAntiCheatBtn
             // 
             this.disableEasyAntiCheatBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.disableEasyAntiCheatBtn.Location = new System.Drawing.Point(712, 567);
+            this.disableEasyAntiCheatBtn.Location = new System.Drawing.Point(534, 461);
+            this.disableEasyAntiCheatBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.disableEasyAntiCheatBtn.Name = "disableEasyAntiCheatBtn";
-            this.disableEasyAntiCheatBtn.Size = new System.Drawing.Size(174, 35);
+            this.disableEasyAntiCheatBtn.Size = new System.Drawing.Size(130, 28);
             this.disableEasyAntiCheatBtn.TabIndex = 7;
             this.disableEasyAntiCheatBtn.Text = "Disable EasyAntiCheat";
             this.disableEasyAntiCheatBtn.UseVisualStyleBackColor = true;
@@ -237,10 +247,11 @@
             this.tabPage2.Controls.Add(this.gamePathTextBox);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1076, 609);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(805, 492);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -248,18 +259,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 577);
+            this.label3.Location = new System.Drawing.Point(10, 469);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(381, 17);
+            this.label3.Size = new System.Drawing.Size(287, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Find this tool useful? Consider buying me a cup of coffee 😉";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(400, 577);
+            this.linkLabel1.Location = new System.Drawing.Point(300, 469);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(258, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(202, 13);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://www.paypal.me/danielgriffithsdev";
@@ -267,9 +280,10 @@
             // 
             // gamePathBtn
             // 
-            this.gamePathBtn.Location = new System.Drawing.Point(638, 15);
+            this.gamePathBtn.Location = new System.Drawing.Point(478, 12);
+            this.gamePathBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gamePathBtn.Name = "gamePathBtn";
-            this.gamePathBtn.Size = new System.Drawing.Size(35, 26);
+            this.gamePathBtn.Size = new System.Drawing.Size(26, 21);
             this.gamePathBtn.TabIndex = 4;
             this.gamePathBtn.Text = "...";
             this.gamePathBtn.UseVisualStyleBackColor = true;
@@ -277,27 +291,30 @@
             // 
             // gamePathTextBox
             // 
-            this.gamePathTextBox.Location = new System.Drawing.Point(102, 16);
+            this.gamePathTextBox.Location = new System.Drawing.Point(76, 13);
+            this.gamePathTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gamePathTextBox.Name = "gamePathTextBox";
             this.gamePathTextBox.ReadOnly = true;
-            this.gamePathTextBox.Size = new System.Drawing.Size(530, 22);
+            this.gamePathTextBox.Size = new System.Drawing.Size(398, 20);
             this.gamePathTextBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 51);
+            this.label2.Location = new System.Drawing.Point(10, 41);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(377, 17);
+            this.label2.Size = new System.Drawing.Size(278, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "(change this if the game is installed in a different directory)";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 17);
+            this.label1.Location = new System.Drawing.Point(10, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Game Path:";
             // 
@@ -320,14 +337,15 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 682);
+            this.ClientSize = new System.Drawing.Size(813, 561);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.startGameBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1100, 729);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(829, 600);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DBFZ Mod Manager";

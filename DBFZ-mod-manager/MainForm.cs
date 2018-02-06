@@ -164,7 +164,7 @@ namespace ModManager
         private void installModBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "ZIP (*.ZIP,*.zip,*.RAR,*.rar)|*.ZIP;*.zip;*.RAR;*.rar";
+            file.Filter = "ZIP (*.ZIP,*.zip,*.RAR,*.rar,*.7Z,*.7z)|*.ZIP;*.zip;*.RAR;*.rar;*.7Z;*.7z";
             if (file.ShowDialog() == DialogResult.OK) {
                 if (Mod.Add(file.FileName)) {
                     this.LoadModsList();
