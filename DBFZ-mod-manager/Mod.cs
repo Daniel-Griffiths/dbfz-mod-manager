@@ -36,24 +36,8 @@ namespace ModManager
 
         // Gets the details from the mod ini
         public static NameValueCollection Detail(string path)
-        {
-            NameValueCollection finalDescription = new NameValueCollection();
-
-            if (File.Exists(path)) {
-                string iniFile = File.ReadAllText(path);
-                string[] descriptions = iniFile.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-
-                foreach (var description in descriptions) {
-                    var split = description.Split(new[] { "=" }, StringSplitOptions.None);
-                    string key = split[0].ToString();
-                    string value = split[1].ToString();
-                    finalDescription[key] = value;
-                }
-
-                return finalDescription;
-            }
-
-            return finalDescription;
+        {        
+            return (File.Exists(path)) ? Ini.Parse(path) : new NameValueCollection();
         }
 
         // Adds a new mod
@@ -90,7 +74,6 @@ namespace ModManager
                 }
             }
 
-            // Delete the temp files
             Delete(tempDir);
 
             return installed;
