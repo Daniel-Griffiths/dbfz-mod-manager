@@ -39,6 +39,10 @@ Version=1.0
 
 If no .ini is provider then the DBFZ mod manager will assume the name based on the .pak filename (eg "BaseGoku.pak" becomes "Base Goku"). 
 
+## Gamebanana 1-Click Install Support 
+
+To enable this functionality you **must** run the mod manager as an admin at least once. This is required to register a custom protocol `dbfmm:` with Gamebanana. Once this is done you will be able to install always any mod on Gamebanana with a single click!
+
 ## Donate
 
 Find this tool useful? Consider buying me a cup of coffee 😉
