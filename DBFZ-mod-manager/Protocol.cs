@@ -6,15 +6,15 @@ namespace ModManager
 {
     class Protocol
     {
-        public static string ProtocolName = "dbfmm";
+        public static string Uri = "dbfmm";
 
         public static void Register()
         {
             try
             {
-                RegistryKey Key = Registry.ClassesRoot.CreateSubKey(ProtocolName);
+                RegistryKey Key = Registry.ClassesRoot.CreateSubKey(Uri);
                 Key.CreateSubKey("DefaultIcon").SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + ",1");
-                Key.SetValue("", ProtocolName + ":Protocol");
+                Key.SetValue("", Uri + ":Protocol");
                 Key.SetValue("URL Protocol", "");
                 Key.CreateSubKey(@"shell\open\command");
                 Key.SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + " %1");

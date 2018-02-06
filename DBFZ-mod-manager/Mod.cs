@@ -11,8 +11,7 @@ namespace ModManager
         // Move a mod to a new location
         public static void Move(string source, string dest)
         {
-            if (File.Exists(source))
-            {
+            if (File.Exists(source)) {
                 File.Copy(source, dest, true);
                 File.Delete(source);
             }
@@ -21,15 +20,13 @@ namespace ModManager
         // Delete a folder and all contained files
         public static void Delete(string path)
         {
-            System.IO.DirectoryInfo di = new DirectoryInfo(path);
+            DirectoryInfo di = new DirectoryInfo(path);
 
-            foreach (FileInfo file in di.GetFiles())
-            {
+            foreach (FileInfo file in di.GetFiles()) {
                 file.Delete();
             }
 
-            foreach (DirectoryInfo dir in di.GetDirectories())
-            {
+            foreach (DirectoryInfo dir in di.GetDirectories()) {
                 dir.Delete(true);
             }
 
@@ -65,13 +62,10 @@ namespace ModManager
             bool installed = false;
 
             // Unzip the files to a temp dir
-            using (Stream stream = File.OpenRead(path))
-            {
+            using (Stream stream = File.OpenRead(path)) {
                 var reader = ReaderFactory.Open(stream);
-                while (reader.MoveToNextEntry())
-                {
-                    if (!reader.Entry.IsDirectory)
-                    {
+                while (reader.MoveToNextEntry()) {
+                    if (!reader.Entry.IsDirectory) {
                         reader.WriteEntryToDirectory(tempDir, new ExtractionOptions() { ExtractFullPath = true, Overwrite = true });
                     }
                 }
@@ -81,7 +75,7 @@ namespace ModManager
             foreach (string mod in Directory.GetFiles(tempDir, "*.pak", SearchOption.AllDirectories)) {
                 installed = true;
 
-                if (File.Exists(Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod))){
+                if (File.Exists(Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod))) {
                     DialogResult dialogResult = MessageBox.Show("A mod with this name already exists, do you want to overwrite it?", "Overwrite Mod", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes) {
                         Move(mod, Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod));
