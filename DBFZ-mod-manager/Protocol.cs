@@ -12,17 +12,24 @@ namespace ModManager
         {
             try
             {
-                RegistryKey Key = Registry.ClassesRoot.CreateSubKey(Uri);
-                Key.CreateSubKey("DefaultIcon").SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + ",1");
-                Key.SetValue("", Uri + ":Protocol");
-                Key.SetValue("URL Protocol", "");
-                Key.CreateSubKey(@"shell\open\command");
-                Key.SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + " %1");
-                Key.Close();
+                // Create new key for desired URL protocol
+                RegistryKey key = Registry.ClassesRoot.CreateSubKey(Uri);
+
+                // Assign protocol
+                key.SetValue(null, Uri);
+                key.SetValue("URL Protocol", string.Empty);
+
+                // Register Shell values
+                Registry.ClassesRoot.CreateSubKey(Uri + "\\Shell");
+                Registry.ClassesRoot.CreateSubKey(Uri + "\\Shell\\open");
+                key = Registry.ClassesRoot.CreateSubKey(Uri + "\\Shell\\open\\command");
+
+                // Specify application handling the URL protocol
+                key.SetValue(null, "\"" + System.Reflection.Assembly.GetEntryAssembly().Location +"\" %1");
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-        
+                //MessageBox.Show(exception.Message);
             }       
         }
     }

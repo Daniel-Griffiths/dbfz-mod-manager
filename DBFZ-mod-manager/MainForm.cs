@@ -21,8 +21,10 @@ namespace ModManager
         {
             gamePathTextBox.Text = this.GamePath;
 
-            // Check if the exe was opened from gamebanana
+            // register the custom protocol for gamebanana
             Protocol.Register();
+
+            // Check if the exe was opened from gamebanana
             GameBanana.Process(Environment.GetCommandLineArgs());
 
             // check if the user has the game installed on thier primary drive 
@@ -40,7 +42,7 @@ namespace ModManager
 
         public string InactiveModPath()
         {
-            return this.GamePath + @"RED\Content\Paks\inactive-mods\";
+            return this.GamePath + @"\inactive-mods\";
         }
 
         private void LoadModsList()
@@ -73,8 +75,8 @@ namespace ModManager
                     name,
                     active,
                     (string.IsNullOrEmpty(details["Name"]))
-                        ? Regex.Replace(name, "(^[a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]+)", " $1", System.Text.RegularExpressions.RegexOptions.Compiled).Trim()
-                        : details["Name"],  // fallback to file name if no ini is present
+                        ? Regex.Replace(name, "(^[a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]+)", " $1", System.Text.RegularExpressions.RegexOptions.Compiled).Trim()  // fallback to file name if no ini is present
+                        : details["Name"], 
                     details["Author"],
                     details["Version"],
                     details["Description"]
@@ -161,14 +163,11 @@ namespace ModManager
 
         private void installModBtn_Click(object sender, EventArgs e)
         {
-            // Browse for the mod zip
             OpenFileDialog file = new OpenFileDialog();
             file.Filter = "ZIP (*.ZIP,*.zip,*.RAR,*.rar)|*.ZIP;*.zip;*.RAR;*.rar";
             if (file.ShowDialog() == DialogResult.OK) {
                 if (Mod.Add(file.FileName)) {
-                    // Reload mod list
                     this.LoadModsList();
-
                     MessageBox.Show("Mod successfully installed!");
                 } else {
                     MessageBox.Show("No mods could be found in this zip file!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
