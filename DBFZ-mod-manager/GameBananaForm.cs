@@ -1,17 +1,8 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
+﻿using System;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace ModManager
 {
@@ -27,20 +18,9 @@ namespace ModManager
         public void SetContent(List<System.Xml.Linq.XElement> values)
         {
             modName.Text = values[0].Value;
-            modDescription.Text = StripHtml(values[1].Value) + StripHtml(values[2].Value);
+            modDescription.Text = Helper.StripHtml(values[1].Value) + Helper.StripHtml(values[2].Value);
             //string modUserId = values[3].Value;
-            modImage.Load(values[4].Value);
-            
-        }
-
-        public string StripHtml(string html)
-        {
-            return Regex.Replace(
-                html
-                .Replace("</br>", Environment.NewLine)
-                .Replace("<br>", Environment.NewLine)
-                .Replace("&nbsp;", " "), 
-            "<.*?>", String.Empty);
+            modImage.Load(values[4].Value);            
         }
 
         private void GameBananaForm_Load(object sender, EventArgs e)

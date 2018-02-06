@@ -60,6 +60,7 @@
     <Compile Include="GameBananaForm.Designer.cs">
       <DependentUpon>GameBananaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

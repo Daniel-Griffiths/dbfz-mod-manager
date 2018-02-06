@@ -10,8 +10,7 @@ namespace ModManager
 
         public static void Register()
         {
-            try
-            {
+            try {
                 // Create new key for desired URL protocol
                 RegistryKey key = Registry.ClassesRoot.CreateSubKey(Uri);
 
@@ -25,12 +24,10 @@ namespace ModManager
                 key = Registry.ClassesRoot.CreateSubKey(Uri + "\\Shell\\open\\command");
 
                 // Specify application handling the URL protocol
-                key.SetValue(null, "\"" + System.Reflection.Assembly.GetEntryAssembly().Location +"\" %1");
-            }
-            catch (Exception exception)
-            {
+                key.SetValue(null, "\"" + System.Reflection.Assembly.GetEntryAssembly().Location + "\" %1");
+            } catch (Exception exception) {
                 //MessageBox.Show(exception.Message);
-            }       
+            }            
         }
     }
 }

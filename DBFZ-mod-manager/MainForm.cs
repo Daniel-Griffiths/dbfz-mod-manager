@@ -1,9 +1,7 @@
 ﻿using System;
 using System.IO;
-using Microsoft.Win32;
 using System.Diagnostics;
 using System.Windows.Forms;
-using SharpCompress.Readers;
 using System.Text.RegularExpressions;
 
 namespace ModManager

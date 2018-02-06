@@ -2,8 +2,8 @@
 using System.IO;
 using System.Windows.Forms;
 using SharpCompress.Readers;
-using System.Collections.Specialized;
 using SharpCompress.Archives;
+using System.Collections.Specialized;
 
 namespace ModManager
 {
