@@ -3,10 +3,12 @@ using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace ModManager
 {
-    public partial class MainForm : Form
+    public partial class MainForm : MaterialForm
     {
         private string GamePath = Properties.Settings.Default.gamePath;
 
@@ -17,6 +19,12 @@ namespace ModManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Initialize theme
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
+
             // Update settings textbox
             gamePathTextBox.Text = this.GamePath;
 
@@ -172,9 +180,9 @@ namespace ModManager
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+       /* private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(linkLabel1.Text);
-        }
+        }*/
     }
 }
