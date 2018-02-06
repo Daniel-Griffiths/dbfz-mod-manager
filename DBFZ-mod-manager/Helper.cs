@@ -13,7 +13,8 @@ namespace ModManager
                 .Replace("</br>", Environment.NewLine)
                 .Replace("<br>", Environment.NewLine)
                 .Replace("&nbsp;", " "),
-            "<.*?>", String.Empty);
+                "<.*?>", String.Empty
+            );
         }
     }
 }
