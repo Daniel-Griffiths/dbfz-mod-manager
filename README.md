@@ -2,7 +2,7 @@
 
 A mod manager for Dragon Ball FighterZ.
 
-<img src="mod-manager.png" width="600px" />
+<img src="mod-manager-screenshot.png" width="600px" />
 
 ## Disclaimer
 
