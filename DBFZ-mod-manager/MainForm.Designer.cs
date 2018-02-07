@@ -227,7 +227,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1073, 553);
+            this.tabPage4.Size = new System.Drawing.Size(1114, 555);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Options";
             // 
@@ -241,7 +241,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1004, 74);
+            this.groupBox2.Size = new System.Drawing.Size(1100, 74);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Misc (Not necessary, but might be required for certain mods)";
@@ -280,7 +280,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1004, 87);
+            this.groupBox1.Size = new System.Drawing.Size(1100, 87);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
