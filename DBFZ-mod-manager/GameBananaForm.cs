@@ -2,11 +2,12 @@
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
 using System.Collections.Generic;
 
 namespace ModManager
 {
-    public partial class GameBananaForm : Form
+    public partial class GameBananaForm : MaterialForm
     {
         public string downloadUrl;
 
@@ -17,7 +18,7 @@ namespace ModManager
 
         public void SetContent(List<System.Xml.Linq.XElement> values)
         {
-            modName.Text = values[0].Value;
+            this.Text = values[0].Value;
             modDescription.Text = Helper.StripHtml(values[1].Value) + Helper.StripHtml(values[2].Value);
             modImage.Load(values[4].Value);
         }
