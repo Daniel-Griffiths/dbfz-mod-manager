@@ -36,7 +36,6 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.installModBtn = new System.Windows.Forms.Button();
             this.modsList = new System.Windows.Forms.DataGridView();
             this.modsFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -44,8 +43,6 @@
             this.modAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openModsFolderBtn = new System.Windows.Forms.Button();
-            this.refreshModsListBtn = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.disableEasyAntiCheatBtn = new System.Windows.Forms.Button();
@@ -53,8 +50,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.gamePathBtn = new System.Windows.Forms.Button();
             this.gamePathTextBox = new System.Windows.Forms.TextBox();
+            this.gamePathBtn = new System.Windows.Forms.Button();
+            this.installModBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.refreshModsBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.openModsBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modsList)).BeginInit();
@@ -82,15 +82,16 @@
             // 
             // startGameBtn
             // 
-            this.startGameBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.startGameBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.startGameBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.startGameBtn.Depth = 0;
             this.startGameBtn.Icon = null;
-            this.startGameBtn.Location = new System.Drawing.Point(22, 690);
+            this.startGameBtn.Location = new System.Drawing.Point(17, 705);
+            this.startGameBtn.MinimumSize = new System.Drawing.Size(215, 36);
             this.startGameBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.startGameBtn.Name = "startGameBtn";
             this.startGameBtn.Primary = true;
-            this.startGameBtn.Size = new System.Drawing.Size(179, 36);
+            this.startGameBtn.Size = new System.Drawing.Size(215, 41);
             this.startGameBtn.TabIndex = 9;
             this.startGameBtn.Text = "Save and PLay";
             this.startGameBtn.UseVisualStyleBackColor = true;
@@ -98,15 +99,16 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.saveBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.saveBtn.Depth = 0;
             this.saveBtn.Icon = null;
-            this.saveBtn.Location = new System.Drawing.Point(208, 690);
+            this.saveBtn.Location = new System.Drawing.Point(241, 705);
+            this.saveBtn.MinimumSize = new System.Drawing.Size(215, 36);
             this.saveBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Primary = true;
-            this.saveBtn.Size = new System.Drawing.Size(179, 36);
+            this.saveBtn.Size = new System.Drawing.Size(215, 41);
             this.saveBtn.TabIndex = 10;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -121,7 +123,7 @@
             this.materialTabSelector1.Location = new System.Drawing.Point(-1, 28);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1106, 61);
+            this.materialTabSelector1.Size = new System.Drawing.Size(1154, 61);
             this.materialTabSelector1.TabIndex = 9;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
@@ -137,35 +139,20 @@
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1081, 582);
+            this.materialTabControl1.Size = new System.Drawing.Size(1122, 584);
             this.materialTabControl1.TabIndex = 11;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.installModBtn);
             this.tabPage3.Controls.Add(this.modsList);
-            this.tabPage3.Controls.Add(this.openModsFolderBtn);
-            this.tabPage3.Controls.Add(this.refreshModsListBtn);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1073, 553);
+            this.tabPage3.Size = new System.Drawing.Size(1114, 555);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Mods";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // installModBtn
-            // 
-            this.installModBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.installModBtn.Location = new System.Drawing.Point(6, 514);
-            this.installModBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.installModBtn.Name = "installModBtn";
-            this.installModBtn.Size = new System.Drawing.Size(173, 34);
-            this.installModBtn.TabIndex = 12;
-            this.installModBtn.Text = "Install Mod";
-            this.installModBtn.UseVisualStyleBackColor = true;
-            this.installModBtn.Click += new System.EventHandler(this.installModBtn_Click);
             // 
             // modsList
             // 
@@ -188,7 +175,7 @@
             this.modsList.Name = "modsList";
             this.modsList.RowHeadersVisible = false;
             this.modsList.RowTemplate.Height = 24;
-            this.modsList.Size = new System.Drawing.Size(1061, 505);
+            this.modsList.Size = new System.Drawing.Size(1102, 545);
             this.modsList.TabIndex = 9;
             // 
             // modsFileName
@@ -231,30 +218,6 @@
             this.modDescription.HeaderText = "Description";
             this.modDescription.Name = "modDescription";
             this.modDescription.ReadOnly = true;
-            // 
-            // openModsFolderBtn
-            // 
-            this.openModsFolderBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.openModsFolderBtn.Location = new System.Drawing.Point(366, 514);
-            this.openModsFolderBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.openModsFolderBtn.Name = "openModsFolderBtn";
-            this.openModsFolderBtn.Size = new System.Drawing.Size(173, 34);
-            this.openModsFolderBtn.TabIndex = 10;
-            this.openModsFolderBtn.Text = "Open Mods Folder";
-            this.openModsFolderBtn.UseVisualStyleBackColor = true;
-            this.openModsFolderBtn.Click += new System.EventHandler(this.openModsFolderBtn_Click);
-            // 
-            // refreshModsListBtn
-            // 
-            this.refreshModsListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.refreshModsListBtn.Location = new System.Drawing.Point(186, 514);
-            this.refreshModsListBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.refreshModsListBtn.Name = "refreshModsListBtn";
-            this.refreshModsListBtn.Size = new System.Drawing.Size(173, 34);
-            this.refreshModsListBtn.TabIndex = 11;
-            this.refreshModsListBtn.Text = "Refresh Mods List";
-            this.refreshModsListBtn.UseVisualStyleBackColor = true;
-            this.refreshModsListBtn.Click += new System.EventHandler(this.refreshModsList_Click);
             // 
             // tabPage4
             // 
@@ -339,6 +302,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "(change this if the game is installed in a different directory)";
             // 
+            // gamePathTextBox
+            // 
+            this.gamePathTextBox.Location = new System.Drawing.Point(95, 18);
+            this.gamePathTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gamePathTextBox.Name = "gamePathTextBox";
+            this.gamePathTextBox.ReadOnly = true;
+            this.gamePathTextBox.Size = new System.Drawing.Size(529, 22);
+            this.gamePathTextBox.TabIndex = 3;
+            // 
             // gamePathBtn
             // 
             this.gamePathBtn.Location = new System.Drawing.Point(631, 17);
@@ -349,21 +321,66 @@
             this.gamePathBtn.Text = "...";
             this.gamePathBtn.UseVisualStyleBackColor = true;
             // 
-            // gamePathTextBox
+            // installModBtn
             // 
-            this.gamePathTextBox.Location = new System.Drawing.Point(95, 18);
-            this.gamePathTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gamePathTextBox.Name = "gamePathTextBox";
-            this.gamePathTextBox.ReadOnly = true;
-            this.gamePathTextBox.Size = new System.Drawing.Size(529, 22);
-            this.gamePathTextBox.TabIndex = 3;
+            this.installModBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.installModBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.installModBtn.Depth = 0;
+            this.installModBtn.Icon = null;
+            this.installModBtn.Location = new System.Drawing.Point(466, 705);
+            this.installModBtn.MinimumSize = new System.Drawing.Size(215, 36);
+            this.installModBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.installModBtn.Name = "installModBtn";
+            this.installModBtn.Primary = true;
+            this.installModBtn.Size = new System.Drawing.Size(215, 41);
+            this.installModBtn.TabIndex = 13;
+            this.installModBtn.Text = "Install Mod";
+            this.installModBtn.UseVisualStyleBackColor = true;
+            this.installModBtn.Click += new System.EventHandler(this.installModBtn_Click);
+            // 
+            // refreshModsBtn
+            // 
+            this.refreshModsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.refreshModsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.refreshModsBtn.Depth = 0;
+            this.refreshModsBtn.Icon = null;
+            this.refreshModsBtn.Location = new System.Drawing.Point(690, 705);
+            this.refreshModsBtn.MinimumSize = new System.Drawing.Size(215, 36);
+            this.refreshModsBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.refreshModsBtn.Name = "refreshModsBtn";
+            this.refreshModsBtn.Primary = true;
+            this.refreshModsBtn.Size = new System.Drawing.Size(215, 41);
+            this.refreshModsBtn.TabIndex = 14;
+            this.refreshModsBtn.Text = "Refresh Mods List";
+            this.refreshModsBtn.UseVisualStyleBackColor = true;
+            this.refreshModsBtn.Click += new System.EventHandler(this.refreshModsList_Click);
+            // 
+            // openModsBtn
+            // 
+            this.openModsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.openModsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.openModsBtn.Depth = 0;
+            this.openModsBtn.Icon = null;
+            this.openModsBtn.Location = new System.Drawing.Point(914, 705);
+            this.openModsBtn.MinimumSize = new System.Drawing.Size(215, 36);
+            this.openModsBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.openModsBtn.Name = "openModsBtn";
+            this.openModsBtn.Primary = true;
+            this.openModsBtn.Size = new System.Drawing.Size(215, 41);
+            this.openModsBtn.TabIndex = 15;
+            this.openModsBtn.Text = "Open Mods Folder";
+            this.openModsBtn.UseVisualStyleBackColor = true;
+            this.openModsBtn.Click += new System.EventHandler(this.openModsFolderBtn_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1105, 738);
+            this.ClientSize = new System.Drawing.Size(1146, 756);
+            this.Controls.Add(this.refreshModsBtn);
+            this.Controls.Add(this.installModBtn);
+            this.Controls.Add(this.openModsBtn);
             this.Controls.Add(this.materialTabControl1);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.saveBtn);
@@ -393,7 +410,6 @@
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button installModBtn;
         private System.Windows.Forms.DataGridView modsList;
         private System.Windows.Forms.DataGridViewTextBoxColumn modsFileName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn modsActive;
@@ -401,8 +417,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modAuthor;
         private System.Windows.Forms.DataGridViewTextBoxColumn modVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn modDescription;
-        private System.Windows.Forms.Button openModsFolderBtn;
-        private System.Windows.Forms.Button refreshModsListBtn;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button disableEasyAntiCheatBtn;
@@ -412,6 +426,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button gamePathBtn;
         private System.Windows.Forms.TextBox gamePathTextBox;
+        private MaterialSkin.Controls.MaterialRaisedButton installModBtn;
+        private MaterialSkin.Controls.MaterialRaisedButton refreshModsBtn;
+        private MaterialSkin.Controls.MaterialRaisedButton openModsBtn;
     }
 }
 
