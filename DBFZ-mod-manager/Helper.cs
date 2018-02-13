@@ -24,13 +24,13 @@ namespace ModManager
         }
 
         /// <summary>
-        /// Attempts to read Window's regestry value's data. Returns false if unsuccessfull.
+        /// Attempts to read Window's registry value's data. Returns false if unsuccessfull.
         /// </summary>
         /// <param name="KeyName">Key with HKEY_LOCAL_MACHINE as the base address.</param>
         /// <param name="ValueName">Address value</param>
         /// <param name="data">Address value data</param>
         /// <returns></returns>
-        public static bool GetWindowsRegestryValueData(string KeyName, string ValueName, out string data)
+        public static bool GetWindowsRegistryValueData(string KeyName, string ValueName, out string data)
         {
             data = null;
             try
@@ -70,7 +70,7 @@ namespace ModManager
 
 
         /// <summary>
-        /// Attempts to find and set the game directory using the Windows regestry.
+        /// Attempts to find and set the game directory using the Windows registry.
         /// Returns false if unsuccessfull.
         /// </summary>
         /// <returns></returns>
@@ -84,7 +84,7 @@ namespace ModManager
             string newGameDirectory = string.Empty;
 
             //Attempt to find install location
-            if (Helper.GetWindowsRegestryValueData(Properties.Settings.Default.steamWindows64BitRegistryKey, "InstallPath", out string steamClientDirectory))
+            if (Helper.GetWindowsRegistryValueData(Properties.Settings.Default.steamWindows64BitRegistryKey, "InstallPath", out string steamClientDirectory))
             {
                 newGameDirectory = System.IO.Path.Combine(new string[] { steamClientDirectory, "steamapps", "common", "DRAGON BALL FighterZ" });
                 if (Helper.IsValidGameDirectory( newGameDirectory ))
