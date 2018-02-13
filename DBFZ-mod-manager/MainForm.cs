@@ -106,8 +106,6 @@ namespace ModManager
         private void SaveMods()
         {
             UserConfig.ConfigSingleton.Instance.Config.GameDirectory = gamePathTextBox.Text;
-            Properties.Settings.Default.gamePath = gamePathTextBox.Text;
-            Properties.Settings.Default.Save();
 
             foreach (DataGridViewRow row in this.modsList.Rows) {
                 string active = row.Cells["modsActive"].Value.ToString();
