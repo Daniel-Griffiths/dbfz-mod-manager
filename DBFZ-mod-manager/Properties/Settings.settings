@@ -5,5 +5,8 @@
     <Setting Name="gamePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files (x86)\Steam\steamapps\common\DRAGON BALL FighterZ\</Value>
     </Setting>
+    <Setting Name="SteamWindows64BitRegistryKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SOFTWARE\WOW6432Node\Valve\Steam</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
