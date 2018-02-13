@@ -37,8 +37,8 @@ namespace ModManager
         {
             try {
                 WebClient wc = new WebClient();
-                string tempDir = AppDomain.CurrentDomain.BaseDirectory + @"\temp\";
-                string fileName = tempDir + "temp.zip";
+                string tempDir = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "temp");
+                string fileName = System.IO.Path.Combine(tempDir, "temp.zip");
 
                 if (!Directory.Exists(tempDir)) {
                     Directory.CreateDirectory(tempDir);
