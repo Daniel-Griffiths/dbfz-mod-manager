@@ -10,7 +10,6 @@ namespace ModManager
 {
     public partial class MainForm : MaterialForm
     {
-        private string GamePath = Properties.Settings.Default.gamePath;
 
         public MainForm()
         {
@@ -25,9 +24,6 @@ namespace ModManager
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
 
-            // Update settings textbox
-            gamePathTextBox.Text = this.GamePath;
-
             // register the custom protocol for gamebanana
             Protocol.Register();
 
@@ -35,21 +31,17 @@ namespace ModManager
             GameBanana.Process(Environment.GetCommandLineArgs());
 
             // check if the user has the game installed on thier primary drive 
-            if (Directory.Exists(this.GamePath)) {
+            if (Helper.AttemptToFindAndSetGameDirectoryWithoutUserInteraction())
+            {
+                //Success
                 this.LoadModsList();
             } else {
-                MessageBox.Show("DragonBallFighterZ is not installed in the default location. Please go to 'Options' and choose the correct game path!");
+                //Failure (Defaults to path set in application settings)
+                MessageBox.Show("Could not find DragonBallFighterZ install location. Please go to 'Options' and choose the correct game path!");
             }
-        }
 
-        public string ActiveModPath()
-        {
-            return this.GamePath + @"RED\Content\Paks\~mods\";
-        }
-
-        public string InactiveModPath()
-        {
-            return this.GamePath + @"\inactive-mods\";
+            // Update settings textbox
+            gamePathTextBox.Text = UserConfig.ConfigSingleton.Instance.Config.GameDirectory;
         }
 
         private void LoadModsList()
@@ -57,13 +49,13 @@ namespace ModManager
             modsList.DataSource = null;
             modsList.Rows.Clear();
 
-            this.LoadMods(ActiveModPath());
-            this.LoadMods(InactiveModPath());
+            this.LoadMods(Helper.ActiveModDirectory);
+            this.LoadMods(Helper.InactiveModDirectory);
         }
 
         private void LoadMods(string path)
         {
-            bool active = (path == ActiveModPath());
+            bool active = (path == Helper.ActiveModDirectory);
 
             if (!Directory.Exists(path)) {
                 Directory.CreateDirectory(path);
@@ -74,7 +66,7 @@ namespace ModManager
                 string name = Path.GetFileNameWithoutExtension(fileInfo.Name);
 
                 // Load mod details if an ini exists
-                var details = Mod.Detail(path + name + ".ini");
+                var details = Mod.Detail( System.IO.Path.Combine(path, name + ".ini") );
 
                 this.modsList.Rows.Add(
                     name,
@@ -96,7 +88,7 @@ namespace ModManager
 
         private void openModsFolderBtn_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", ActiveModPath());
+            Process.Start("explorer.exe", Helper.ActiveModDirectory);
         }
 
         private void startGameBtn_Click(object sender, EventArgs e)
@@ -113,7 +105,7 @@ namespace ModManager
 
         private void SaveMods()
         {
-            this.GamePath = gamePathTextBox.Text;
+            UserConfig.ConfigSingleton.Instance.Config.GameDirectory = gamePathTextBox.Text;
             Properties.Settings.Default.gamePath = gamePathTextBox.Text;
             Properties.Settings.Default.Save();
 
@@ -122,13 +114,13 @@ namespace ModManager
                 string name = row.Cells["modsFileName"].Value.ToString();
 
                 if (active == "True") {
-                    Mod.Move(InactiveModPath() + name + ".pak", ActiveModPath() + name + ".pak");
-                    Mod.Move(InactiveModPath() + name + ".sig", ActiveModPath() + name + ".sig");
-                    Mod.Move(InactiveModPath() + name + ".ini", ActiveModPath() + name + ".ini");
+                    Mod.Move( System.IO.Path.Combine(Helper.InactiveModDirectory, name + ".pak") , System.IO.Path.Combine(Helper.ActiveModDirectory, name + ".pak") );
+                    Mod.Move( System.IO.Path.Combine(Helper.InactiveModDirectory, name + ".sig") , System.IO.Path.Combine(Helper.ActiveModDirectory, name + ".sig") );
+                    Mod.Move( System.IO.Path.Combine(Helper.InactiveModDirectory, name + ".ini") , System.IO.Path.Combine(Helper.ActiveModDirectory, name + ".ini") );
                 } else {
-                    Mod.Move(ActiveModPath() + name + ".pak", InactiveModPath() + name + ".pak");
-                    Mod.Move(ActiveModPath() + name + ".sig", InactiveModPath() + name + ".sig");
-                    Mod.Move(ActiveModPath() + name + ".ini", InactiveModPath() + name + ".ini");
+                    Mod.Move( System.IO.Path.Combine(Helper.ActiveModDirectory, name + ".pak") , System.IO.Path.Combine(Helper.InactiveModDirectory, name + ".pak") );
+                    Mod.Move( System.IO.Path.Combine(Helper.ActiveModDirectory, name + ".sig") , System.IO.Path.Combine(Helper.InactiveModDirectory, name + ".sig") );
+                    Mod.Move( System.IO.Path.Combine(Helper.ActiveModDirectory, name + ".ini") , System.IO.Path.Combine(Helper.InactiveModDirectory, name + ".ini") );
                 }
             }
         }
@@ -138,7 +130,7 @@ namespace ModManager
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to patch DragonBallFighterZ.exe? \n\n (This can be reverted at any time by going into Steam and choosing 'Verify Integrity of Game Files')", "Patch DragonBallFighterZ.exe", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes) {
                 try {
-                    File.WriteAllBytes(this.GamePath + "DBFighterZ.exe", Properties.Resources.DBFighterZ);
+                    File.WriteAllBytes(UserConfig.ConfigSingleton.Instance.Config.GameDirectory + "DBFighterZ.exe", Properties.Resources.DBFighterZ);
                     MessageBox.Show("DragonBallFighterZ.exe has been successfully patched!");
                 } catch (Exception exception) {
                     MessageBox.Show("The following error occurred when patching the game: " + exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -149,16 +141,16 @@ namespace ModManager
         private void disableEasyAntiCheatBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Once EasyAntiCheat opens, choose 'Dragon Ball Fighter Z' and click uninstall.");
-            Process.Start(this.GamePath + @"EasyAntiCheat\EasyAntiCheat_Setup.exe");
+            Process.Start( Helper.EasyAntiCheatEXEPath );
         }
 
         private void gamePathBtn_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
             if (folderBrowser.ShowDialog() == DialogResult.OK) {
-                if (File.Exists(folderBrowser.SelectedPath + @"\DBFighterZ.exe")) {
-                    this.gamePathTextBox.Text = folderBrowser.SelectedPath + @"\";
-                    this.GamePath = folderBrowser.SelectedPath + @"\";
+                if ( Helper.IsValidGameDirectory( folderBrowser.SelectedPath ) ) {
+                    this.gamePathTextBox.Text = folderBrowser.SelectedPath;
+                    UserConfig.ConfigSingleton.Instance.Config.GameDirectory = folderBrowser.SelectedPath;
                     this.LoadModsList();
                 } else {
                     MessageBox.Show("Error, could not find DBFighterZ.exe in this folder. Are you sure you chose the correct folder?", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -180,9 +172,9 @@ namespace ModManager
             }
         }
 
-       /* private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(linkLabel1.Text);
-        }*/
+        /* private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+         {
+             Process.Start(linkLabel1.Text);
+         }*/
     }
 }

@@ -38,12 +38,24 @@ namespace ModManager.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("SOFTWARE\\WOW6432Node\\Valve\\Steam")]
-        public string SteamWindows64BitRegistryKey {
+        public string steamWindows64BitRegistryKey {
             get {
-                return ((string)(this["SteamWindows64BitRegistryKey"]));
+                return ((string)(this["steamWindows64BitRegistryKey"]));
             }
             set {
-                this["SteamWindows64BitRegistryKey"] = value;
+                this["steamWindows64BitRegistryKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("UserConfig.json")]
+        public string userConfigPath {
+            get {
+                return ((string)(this["userConfigPath"]));
+            }
+            set {
+                this["userConfigPath"] = value;
             }
         }
     }

@@ -43,7 +43,7 @@ namespace ModManager
         // Adds a new mod
         public static bool Add(string path)
         {
-            string tempDir = AppDomain.CurrentDomain.BaseDirectory + @"\temp";
+            string tempDir = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "temp");
             bool installed = false;
 
             // Unzip the files to a temp dir
@@ -60,17 +60,17 @@ namespace ModManager
             foreach (string mod in Directory.GetFiles(tempDir, "*.pak", SearchOption.AllDirectories)) {
                 installed = true;
 
-                if (File.Exists(Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod))) {
+                if (File.Exists( System.IO.Path.Combine( Helper.ActiveModDirectory, Path.GetFileName(mod) ))) {
                     DialogResult dialogResult = MessageBox.Show("A mod with this name already exists, do you want to overwrite it?", "Overwrite Mod", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes) {
-                        Move(mod, Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod));
-                        Move(mod.Replace(".pak", ".sig"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak", ".sig"));
-                        Move(mod.Replace(".pak", ".ini"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak", ".ini"));
+                        Move(mod, System.IO.Path.Combine( Helper.ActiveModDirectory, Path.GetFileName(mod) ));
+                        Move(mod.Replace(".pak", ".sig"), System.IO.Path.Combine( Helper.ActiveModDirectory , Path.GetFileName(mod).Replace(".pak", ".sig") ));
+                        Move(mod.Replace(".pak", ".ini"), System.IO.Path.Combine( Helper.ActiveModDirectory, Path.GetFileName(mod).Replace(".pak", ".ini") ));
                     }
                 } else {
-                    Move(mod, Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod));
-                    Move(mod.Replace(".pak", ".sig"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak", ".sig"));
-                    Move(mod.Replace(".pak", ".ini"), Properties.Settings.Default.gamePath + @"RED\Content\Paks\~mods\" + Path.GetFileName(mod).Replace(".pak", ".ini"));
+                    Move(mod, System.IO.Path.Combine( Helper.ActiveModDirectory, Path.GetFileName(mod) ));
+                    Move(mod.Replace(".pak", ".sig"), System.IO.Path.Combine( Helper.ActiveModDirectory, Path.GetFileName(mod).Replace(".pak", ".sig") ));
+                    Move(mod.Replace(".pak", ".ini"), System.IO.Path.Combine( Helper.ActiveModDirectory, Path.GetFileName(mod).Replace(".pak", ".ini") ));
                 }
             }
 
