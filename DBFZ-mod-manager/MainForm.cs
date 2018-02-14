@@ -128,7 +128,7 @@ namespace ModManager
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to patch DragonBallFighterZ.exe? \n\n (This can be reverted at any time by going into Steam and choosing 'Verify Integrity of Game Files')", "Patch DragonBallFighterZ.exe", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes) {
                 try {
-                    File.WriteAllBytes(System.IO.Path.Combine(UserConfig.ConfigSingleton.Instance.Config.GameDirectory, "DBFighterZ.exe"), Properties.Resources.DBFighterZ);
+                    File.WriteAllBytes(Helper.CurrentGameEXEPath, Properties.Resources.DBFighterZ);
                     MessageBox.Show("DragonBallFighterZ.exe has been successfully patched!");
                 } catch (Exception exception) {
                     MessageBox.Show("The following error occurred when patching the game: " + exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
