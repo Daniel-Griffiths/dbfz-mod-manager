@@ -8,6 +8,14 @@ A mod manager for Dragon Ball FighterZ.
 
 Please use mods at your own risk and do not play online matches whilst mods are enabled!
 
+## Patching the game	
+	
+The game **must** be patched in order to install mods. 	
+To do this simply open the DBFZ Mod Manager and click `Disable EasyAntiCheat`, choose Dragon Ball FighterZ from the dropdown and click ninstall. 	
+After that click `Patch Exe` and you are all ready to go!	
+	
+If you ever want to un-patch the game and play online again you can simply go into Steam and [Verify the integrity of the game files](https://support.steampowered.com/kb_article.php?ref=2037-QEUH-3335). 
+
 ## Installing Mods
 
 Currently the best place to get mods for DBFZ is [gamebanana.com](https://gamebanana.com/skins/games/6246).
